@@ -4,21 +4,26 @@ var test = require('tap').test,
 var population_size = 16;
 var chromosome_size = 16;
 var population = new Array;
+var fitness_of = new Object;
 
-test('Loads OK', function (t) {
+test('loads', function (t) {
+         t.ok(nodeo, 'Loaded OK');
+         t.end();
+     });
+
+test('chromosomes', function (t) {
 	 for ( var i = 0; i < population_size; i ++ )  {
 	     var chromosome = nodeo.random( chromosome_size );
 	     population.push( chromosome );
 	     t.equal(chromosome.length, chromosome_size, "Length " + chromosome + " OK" );
 	     var is_match = chromosome.match(/[01]+/g );
-	     t.ok(is_match, "Binary")	     
+	     t.ok(is_match, "Binary");
+             fitness_of[chromosome] =  nodeo.max_ones( chromosome );
+	     t.ok( fitness_of[chromosome] >= 0, "fitness" )
 	 }
 
          t.end();
      });
 
 
-test('Chromosome', function (t) {
-         t.ok(nodeo, 'Loaded OK');
-         t.end();
-     });
+
