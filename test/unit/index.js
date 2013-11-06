@@ -22,6 +22,11 @@ test('chromosomes', function (t) {
 	     t.ok( fitness_of[chromosome] >= 0, "fitness" );
 	     var new_chromosome = nodeo.mutate(chromosome);
 	     t.ok( new_chromosome != chromosome, "mutation " + chromosome + " - " + new_chromosome);
+	     var to_cross = nodeo.invert( chromosome );
+	     t.ok( to_cross.charAt(0) != chromosome.charAt(0), "invert" );
+	     var crossed = nodeo.crossover( to_cross, chromosome );
+	     t.ok( crossed[0] != chromosome, "Crossed" );
+	     t.ok( crossed[1] != to_cross, "Crossed" );
 	 }
 
          t.end();
