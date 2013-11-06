@@ -1,9 +1,8 @@
 var test = require('tap').test,
-    nodeo = require(__dirname + '/../../lib/index.js');
+    nodeo = require(__dirname + '/../../lib/nodeo.js');
 
-nodeo(function (err) {
-    test('unit', function (t) {
-        t.equal(err, null, 'error object is null');
-        t.end();
-    });
-});
+
+test('Loads OK', function (t) {
+         t.ok(nodeo, 'Loaded OK');
+         t.end();
+     });
