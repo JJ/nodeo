@@ -15,4 +15,9 @@ var fitness_of = new Object;
      fitness_of[chromosome] =  nodeo.max_ones( chromosome );
      var new_chromosome = nodeo.mutate(chromosome);
      console.log(new_chromosome+"\n"+chromosome+"\n");
+     if ( i > 0 ) {
+	 var crossed = new Array;
+	 crossed = nodeo.crossover( population[i-1],chromosome);
+	 console.log(population[i-1]+"-"+chromosome + "\n"+crossed[0] + "-" + crossed[1]);
+     }
 }
