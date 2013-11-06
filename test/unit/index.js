@@ -19,11 +19,18 @@ test('chromosomes', function (t) {
 	     var is_match = chromosome.match(/[01]+/g );
 	     t.ok(is_match, "Binary");
              fitness_of[chromosome] =  nodeo.max_ones( chromosome );
-	     t.ok( fitness_of[chromosome] >= 0, "fitness" )
+	     t.ok( fitness_of[chromosome] >= 0, "fitness" );
+	     var new_chromosome = nodeo.mutate(chromosome);
+	     t.ok( new_chromosome != chromosome, "mutation " + chromosome + " - " + new_chromosome);
 	 }
 
          t.end();
      });
 
+
+test('mutation', function (t) {
+         t.ok(nodeo, 'Loaded OK');
+         t.end();
+     });
 
 
