@@ -30,12 +30,14 @@ test('chromosomes', function (t) {
 	 }
 
          t.end();
-     });
+});
 
-
-test('mutation', function (t) {
-         t.ok(nodeo, 'Loaded OK');
-         t.end();
-     });
+test('Nodeo', function(t) {
+    var eo = new nodeo.Nodeo( { population_size: population_size,
+				chromosome_size: chromosome_size,
+				fitness_func: nodeo.max_ones } );
+    t.ok( eo, "Tipo");
+    t.end();
+});
 
 
