@@ -7,6 +7,8 @@ var population_size = 16;
 var chromosome_size = 16;
 var population = new Array;
 var fitness_of = new Object;
+var tournament_size = 2;
+var pool_size = population_size;
 
 for ( var i = 0; i < population_size; i ++ )  {
     var chromosome = nodeo.random( chromosome_size );
@@ -26,3 +28,6 @@ var eo = new nodeo.Nodeo( { population_size: population_size,
 			    chromosome_size: chromosome_size,
 			    fitness_func: nodeo.max_ones } );
 console.log(eo);
+var chosen = eo.tournament_selection( tournament_size, pool_size);
+
+console.log(chosen);

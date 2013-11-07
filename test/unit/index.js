@@ -5,6 +5,8 @@ var population_size = 16;
 var chromosome_size = 16;
 var population = new Array;
 var fitness_of = new Object;
+var tournament_size = 3;
+var pool_size = population_size;
 
 test('loads', function (t) {
          t.ok(nodeo, 'Loaded OK');
@@ -33,11 +35,14 @@ test('chromosomes', function (t) {
 });
 
 test('Nodeo', function(t) {
-    var eo = new nodeo.Nodeo( { population_size: population_size,
-				chromosome_size: chromosome_size,
-				fitness_func: nodeo.max_ones } );
-    t.ok( eo, "Tipo");
-    t.end();
+	 var eo = new nodeo.Nodeo( { population_size: population_size,
+				     chromosome_size: chromosome_size,
+				     fitness_func: nodeo.max_ones } );
+	 t.ok( eo, "Tipo");
+	 
+	 var chosen = eo.tournament_selection( tournament_size, pool_size);
+	 t.equal( chosen.length, pool_size, "Size OK");
+	 t.end();
 });
 
 
