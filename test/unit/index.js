@@ -42,6 +42,8 @@ test('Nodeo', function(t) {
 	 
 	 var chosen = eo.tournament_selection( tournament_size, pool_size);
 	 t.equal( chosen.length, pool_size, "Size OK");
+	 var new_population = eo.reproduction( chosen);
+	 t.equal( new_population.length, population_size, "Size OK");
 	 t.end();
 });
 

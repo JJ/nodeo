@@ -29,5 +29,6 @@ var eo = new nodeo.Nodeo( { population_size: population_size,
 			    fitness_func: nodeo.max_ones } );
 console.log(eo);
 var chosen = eo.tournament_selection( tournament_size, pool_size);
-
 console.log(chosen);
+var new_population = eo.reproduction( chosen);
+console.log(new_population);
