@@ -49,6 +49,10 @@ test('Nodeo', function(t) {
 	 var the_best_fitness = eo.fitness_of[the_best];
 	 eo.generation();
 	 t.ok( eo.fitness_of[eo.population[0]] >= the_best_fitness, "Improving fitness" );
+	 do {
+	     eo.generation();
+	 } while ( eo.fitness_of[eo.population[0]] < chromosome_size );
+	 t.equal(eo.fitness_of[eo.population[0]], chromosome_size, "Finished EA"   )
 	 t.end();
 });
 
