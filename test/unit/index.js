@@ -44,6 +44,11 @@ test('Nodeo', function(t) {
 	 t.equal( chosen.length, pool_size, "Size OK");
 	 var new_population = eo.reproduction( chosen);
 	 t.equal( new_population.length, population_size, "Size OK");
+	 eo.generation();
+	 var the_best = eo.population[0];
+	 var the_best_fitness = eo.fitness_of[the_best];
+	 eo.generation();
+	 t.ok( eo.fitness_of[eo.population[0]] >= the_best_fitness, "Improving fitness" );
 	 t.end();
 });
 
