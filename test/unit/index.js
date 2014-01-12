@@ -1,5 +1,6 @@
 var test = require('tap').test,
-    nodeo = require(__dirname + '/../../lib/nodeo.js');
+utils = require(__dirname + '/../../lib/Utils.js');
+nodeo = require(__dirname + '/../../lib/nodeo.js');
 
 var population_size = 16;
 var chromosome_size = 16;
@@ -15,12 +16,12 @@ test('loads', function (t) {
 
 test('chromosomes', function (t) {
 	 for ( var i = 0; i < population_size; i ++ )  {
-	     var chromosome = nodeo.random( chromosome_size );
+	     var chromosome = utils.random( chromosome_size );
 	     population.push( chromosome );
 	     t.equal(chromosome.length, chromosome_size, "Length " + chromosome + " OK" );
 	     var is_match = chromosome.match(/[01]+/g );
 	     t.ok(is_match, "Binary");
-             fitness_of[chromosome] =  nodeo.max_ones( chromosome );
+             fitness_of[chromosome] =  utils.max_ones( chromosome );
 	     t.ok( fitness_of[chromosome] >= 0, "fitness" );
 	     var new_chromosome = nodeo.mutate(chromosome);
 	     t.ok( new_chromosome != chromosome, "mutation " + chromosome + " - " + new_chromosome);
@@ -37,7 +38,7 @@ test('chromosomes', function (t) {
 test('Nodeo', function(t) {
 	 var eo = new nodeo.Nodeo( { population_size: population_size,
 				     chromosome_size: chromosome_size,
-				     fitness_func: nodeo.max_ones } );
+				     fitness_func: utils.max_ones } );
 	 t.ok( eo, "Tipo");
 	 
 	 var chosen = eo.tournament_selection( tournament_size, pool_size);
