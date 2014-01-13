@@ -7,7 +7,7 @@ node.js and anything else.
 
 ## Build Status
 
-[![Build Status](https://travis-ci.org/JJ/hoborg.png)](https://travis-ci.org/JJ/hoborg)
+[![Build Status](https://travis-ci.org/JJ/nodeo.png)](https://travis-ci.org/JJ/nodeo)
 
 ### Installation
 ```bash
@@ -18,6 +18,15 @@ npm install nodeo
 ```bash
 npm test
 ```
+
+### Running an evolutionary algorithm
+
+There's a simple evolutionary algorithm in the home directory, 
+
+	cd node_modules/nodeo
+	node test.js
+	
+
 
 
 
