@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var nodeo = require('./lib/nodeo.js');
+var nodeo = require('./lib/nodeo.js'),
+utils = require('./lib/Utils.js');
 
 
 var population_size = 16;
@@ -11,10 +12,10 @@ var tournament_size = 2;
 var pool_size = population_size;
 
 for ( var i = 0; i < population_size; i ++ )  {
-    var chromosome = nodeo.random( chromosome_size );
+    var chromosome = utils.random( chromosome_size );
     population.push( chromosome );
     var is_match = chromosome.match(/[01]+/g );
-    fitness_of[chromosome] =  nodeo.max_ones( chromosome );
+    fitness_of[chromosome] =  utils.max_ones( chromosome );
     var new_chromosome = nodeo.mutate(chromosome);
     console.log(new_chromosome+"\n"+chromosome+"\n");
     if ( i > 0 ) {
