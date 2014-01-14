@@ -27,7 +27,7 @@ for ( var i = 0; i < population_size; i ++ )  {
 
 var eo = new nodeo.Nodeo( { population_size: population_size,
 			    chromosome_size: chromosome_size,
-			    fitness_func: nodeo.max_ones } );
+			    fitness_func: utils.max_ones } );
 console.log(eo);
 var chosen = eo.tournament_selection( tournament_size, pool_size);
 console.log(chosen);
