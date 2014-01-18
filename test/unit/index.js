@@ -1,5 +1,5 @@
 var test = require('tap').test,
-utils = require(__dirname + '/../../lib/Utils.js');
+utils = require(__dirname + '/../../lib/Utils.js'),
 nodeo = require(__dirname + '/../../lib/nodeo.js');
 
 var population_size = 16;
