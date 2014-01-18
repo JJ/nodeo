@@ -29,7 +29,7 @@ test("l-trap", function(t) {
 	 test_trap( t, trap, params4, subjects4);
 	 t.end();
 });
-
+	 
 function test_trap(t, trap, params, subjects ) {
     var many_traps = '';
     var sum = 0;
