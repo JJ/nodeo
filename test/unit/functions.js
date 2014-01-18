@@ -23,7 +23,6 @@ test("l-trap", function(t) {
 			  '011': 0,
 			  '110': 0};
 	 test_trap( t, params3, subjects3);
-
 	 var params4 = [4,a,b,3];
 	 var subjects4= { '1111': b,
 			  '0000': a,
@@ -37,9 +36,14 @@ function test_trap(t, params, subjects ) {
     var number_of_bits = params[0], 
     a = params[1], b = params[2], z  = params[3];
     console.log( params );
+    var many_traps = '';
+    var sum = 0;
     for ( var i in subjects ) {
-	console.log(i);
+	many_traps +=i;
+	sum += subjects[i];
 	t.equal( functions.ltrap(i, number_of_bits, a, b, z ), subjects[i], "ltrap " + i + " = " + subjects[i]);
     }
+
+    t.equal( functions.ltrap(many_traps, number_of_bits, a, b, z ), sum, "Many l-traps");
 
 }
