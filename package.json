@@ -2,7 +2,7 @@
   "author": "J. J. Merelo <jjmerelo@gmail.com> (http://github.com/JJ/nodeo)",
   "name": "nodeo",
   "description": "Evolutionary Algorithm, simplified, for node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "url": "git://github.com/JJ/nodeo.git"
   },
@@ -11,7 +11,7 @@
     "test": "make test"
   },
   "dependencies": {},
-  "devDependencies": {
+  "devDependencies":{ 
     "hint-hint": "~0.3.0",
     "tap": "~0.3.1"
   },
