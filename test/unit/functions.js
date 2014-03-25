@@ -32,6 +32,24 @@ test("l-trap", function(t) {
 	 t.end();
 });
 
+test("MMDP", function(t) {
+	 var many_mmdp ='';
+	 var sum = 0;
+	 var subjects= { '111111': 1,
+			  '000000111111': 2,
+			  '000001': 0,
+			  '100001': 0.360384,
+			  '101001': 0.640576};
+	 for ( var i in subjects ) {
+	     many_mmdp +=i;
+	     sum += subjects[i];
+	     t.equal( functions.MMDP(i), subjects[i], "mmdp " + i + " = " + subjects[i]);
+	 }
+	 t.equal( functions.MMDP(many_mmdp), sum, "Many MMDP");
+
+	 t.end();
+});
+
 function test_trap(t, params, subjects ) {
     var number_of_bits = params[0], 
     a = params[1], b = params[2], z  = params[3];
@@ -47,3 +65,5 @@ function test_trap(t, params, subjects ) {
     t.equal( functions.ltrap(many_traps, number_of_bits, a, b, z ), sum, "Many l-traps");
 
 }
+
+
