@@ -11,9 +11,11 @@
     "test": "make test"
   },
   "dependencies": {},
-  "devDependencies":{ 
+  "devDependencies": {
     "hint-hint": "~0.3.0",
-    "tap": "~0.3.1"
+    "tap": "~0.3.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0"
   },
   "optionalDependencies": {},
   "engines": {
