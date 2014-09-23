@@ -23,6 +23,13 @@ npm install nodeo
 npm test
 ```
 
+### Developing
+
+You will have to install a bit of more stuff, including Grunt, which, for the time being, is used to check code and generate documentation. That is
+```bash
+npm install -g grunt-cli
+```
+
 ### Running an evolutionary algorithm
 
 There's a simple evolutionary algorithm in the `app` directory, 

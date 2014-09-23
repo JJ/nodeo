@@ -1,29 +1,38 @@
 'use strict';
 
 module.exports = function(grunt) {
+    
+    // Project configuration.
+    grunt.initConfig({
+	jshint: {
+	    options: {
+		jshintrc: '.jshintrc'
+	    },
+	    gruntfile: {
+		src: 'Gruntfile.js'
+	    },
+	    lib: {
+		src: ['lib/**/*.js']
+	    },
+	    test: {
+		src: ['test/**/*.js']
+	    },
+	    docco: {
+		debug: {
+		    src: ['lib/*.js'],
+		    options: {
+			output: 'docs/'
+		    }
+		}
+	    }
+	}
+    });
 
-  // Project configuration.
-  grunt.initConfig({
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc'
-      },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
-      lib: {
-        src: ['lib/**/*.js']
-      },
-      test: {
-        src: ['test/**/*.js']
-      },
-    }
-  });
+    // These plugins provide necessary tasks.
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-docco');
 
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-
-  // Default task.
-  grunt.registerTask('default', ['jshint']);
-
+    // Default task.
+    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('docco', ['docco']);
 };
