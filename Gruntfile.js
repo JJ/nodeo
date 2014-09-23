@@ -16,13 +16,14 @@ module.exports = function(grunt) {
 	    },
 	    test: {
 		src: ['test/**/*.js']
-	    },
-	    docco: {
-		debug: {
-		    src: ['lib/*.js'],
-		    options: {
-			output: 'docs/'
-		    }
+	    }
+	    
+	},
+	docco: {
+	    debug: {
+		src: ['lib/*.js'],
+		options: {
+		    output: 'docs/'
 		}
 	    }
 	}
@@ -34,5 +35,5 @@ module.exports = function(grunt) {
 
     // Default task.
     grunt.registerTask('default', ['jshint']);
-    grunt.registerTask('docco', ['docco']);
+    grunt.registerTask('docs', ['docco']);
 };
