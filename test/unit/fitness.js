@@ -53,14 +53,14 @@ test("MMDP", function(t) {
 function test_trap(t, trap, params, subjects ) {
     var many_traps = '';
     var sum = 0;
-    var trap = new trap.Trap( params );
+    var local_trap = new trap.Trap( params );
 
     for ( var i in subjects ) {
 	many_traps +=i;
 	sum += subjects[i];
-	t.equal( trap.apply(i ), subjects[i], "ltrap " + i + " = " + subjects[i]);
+	t.equal( local_trap.apply(i ), subjects[i], "ltrap " + i + " = " + subjects[i]);
     }
 
-    t.equal( trap.apply(many_traps ), sum, "Many l-traps");
+    t.equal( local_trap.apply(many_traps ), sum, "Many l-traps");
 
 }

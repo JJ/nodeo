@@ -4,8 +4,8 @@ nodeo = require(__dirname + '/../../lib/nodeo.js');
 
 var population_size = 16;
 var chromosome_size = 16;
-var population = new Array;
-var fitness_of = new Object;
+var population = new Array([]);
+var fitness_of = new Object({});
 var tournament_size = 3;
 var pool_size = population_size;
 
@@ -24,12 +24,12 @@ test('chromosomes', function (t) {
              fitness_of[chromosome] =  utils.max_ones( chromosome );
 	     t.ok( fitness_of[chromosome] >= 0, "fitness" );
 	     var new_chromosome = nodeo.mutate(chromosome);
-	     t.ok( new_chromosome != chromosome, "mutation " + chromosome + " - " + new_chromosome);
+	     t.ok( new_chromosome !== chromosome, "mutation " + chromosome + " - " + new_chromosome);
 	     var to_cross = nodeo.invert( chromosome );
-	     t.ok( to_cross.charAt(0) != chromosome.charAt(0), "invert" );
+	     t.ok( to_cross.charAt(0) !== chromosome.charAt(0), "invert" );
 	     var crossed = nodeo.crossover( to_cross, chromosome );
-	     t.ok( crossed[0] != chromosome, "Crossed" );
-	     t.ok( crossed[1] != to_cross, "Crossed" );
+	     t.ok( crossed[0] !== chromosome, "Crossed" );
+	     t.ok( crossed[1] !== to_cross, "Crossed" );
 	 }
 
          t.end();
@@ -57,7 +57,7 @@ test('Nodeo', function(t) {
     do {
 	eo.generation();
     } while ( eo.fitness_of[eo.population[0]] < chromosome_size );
-    t.equal(eo.fitness_of[eo.population[0]], chromosome_size, "Finished EA"   )
+    t.equal(eo.fitness_of[eo.population[0]], chromosome_size, "Finished EA" );
     t.end();
 });
 
