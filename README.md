@@ -32,6 +32,17 @@ You will have to install a bit of more stuff, including Grunt, which, for the ti
 npm install -g grunt-cli
 ```
 
+And then
+
+	grunt docco
+
+to generate documentation (if you've installed docco previously) or
+
+	grunt jshint
+
+to check the code. 
+
+
 ### Running an evolutionary algorithm
 
 There's a simple evolutionary algorithm in the `app` directory, 
