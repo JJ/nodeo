@@ -1,6 +1,7 @@
 var test = require('tap').test,
 trap = require(__dirname + '/../../lib/trap.js'),
-mmdp = require(__dirname + '/../../lib/MMDP.js');
+mmdp = require(__dirname + '/../../lib/MMDP.js'),
+functions = require(__dirname + '/../../lib/functions.js');
 console.log(trap);
 
 test('loads', function (t) {
@@ -48,6 +49,16 @@ test("MMDP", function(t) {
 	 t.equal( this_mmdp.apply(many_mmdp), sum, "Many MMDP");
 
 	 t.end();
+});
+
+
+test("Ackley", function(t) {
+    var subjects= [ [0,0],
+		    [0,0,0] ];
+    for ( var i in subjects ) {
+	t.equal( functions.ackley(subjects[i]), 0, "Ackley " + i + " = " + subjects[i]);
+    }
+    t.end();
 });
 	 
 function test_trap(t, trap, params, subjects ) {
