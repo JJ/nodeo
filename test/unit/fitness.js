@@ -1,7 +1,8 @@
 var test = require('tap').test,
 trap = require(__dirname + '/../../lib/trap.js'),
 mmdp = require(__dirname + '/../../lib/MMDP.js'),
-functions = require(__dirname + '/../../lib/functions.js');
+functions = require(__dirname + '/../../lib/functions.js'),
+ackley = require(__dirname + '/../../lib/Ackley.js');
 console.log(trap);
 
 test('loads', function (t) {
@@ -55,8 +56,16 @@ test("MMDP", function(t) {
 test("Ackley", function(t) {
     var subjects= [ [0,0],
 		    [0,0,0] ];
+    var ack = new ackley.Ackley;
+
     for ( var i in subjects ) {
 	t.equal( functions.ackley(subjects[i]), 0, "Ackley " + i + " = " + subjects[i]);
+	t.equal( ack.apply(subjects[i]), 0, "Ackley f " + i + " = " + subjects[i]);
+    }
+    subjects= [ [0,0.5],
+		[0,0,.1] ];
+    for ( var i in subjects ) {
+	t.equal( ack.apply(subjects[i]), functions.ackley(subjects[i]), "Ackley " + i + " = " + subjects[i]);
     }
     t.end();
 });
