@@ -1,7 +1,3 @@
----
-layout: index
----
-
 # NodEO
 
 [![NPM](https://nodei.co/npm/nodeo.png)](https://npmjs.org/package/nodeo)
