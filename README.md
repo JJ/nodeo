@@ -48,7 +48,7 @@ to check the code.
 There's a simple evolutionary algorithm in the `app` directory, 
 
 	cd node_modules/nodeo
-	node app/test.js
+	node app/ea.js
 	
 ## Problems? Questions?
 
