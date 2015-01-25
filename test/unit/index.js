@@ -51,9 +51,6 @@ test('Nodeo', function(t) {
     var the_best_fitness = eo.fitness_of[the_best];
     eo.generation();
     t.ok( eo.fitness_of[eo.population[0]] >= the_best_fitness, "Improving fitness" );
-    var chromosome = utils.random( chromosome_size );
-    eo.incorporate( chromosome );
-    t.ok(  eo.fitness_of[chromosome] >= 0, "New member" );
     do {
 	eo.generation();
     } while ( eo.fitness_of[eo.population[0]] < chromosome_size );
