@@ -1,4 +1,6 @@
 var test = require('tap').test,
+utils = require(__dirname + '/../../lib/Utils.js'),
+Chromosome = require(__dirname + '/../../lib/chromosome.js'),
 Classic = require(__dirname + '/../../lib/classic.js');
 
 test('loads', function (t) {
@@ -6,27 +8,32 @@ test('loads', function (t) {
          t.end();
      });
 
-/* test('chromosomes', function (t) {
-	 for ( var i = 0; i < population_size; i ++ )  {
-	     var chromosome = utils.random( chromosome_size );
-	     population.push( chromosome );
-	     t.equal(chromosome.length, chromosome_size, "Length " + chromosome + " OK" );
-	     var is_match = chromosome.match(/[01]+/g );
-	     t.ok(is_match, "Binary");
-             fitness_of[chromosome] =  utils.max_ones( chromosome );
-	     t.ok( fitness_of[chromosome] >= 0, "fitness" );
-	     var new_chromosome = ops.mutate(chromosome);
-	     t.ok( new_chromosome !== chromosome, "mutation " + chromosome + " - " + new_chromosome);
-	     var to_cross = ops.invert( chromosome );
-	     t.ok( to_cross.charAt(0) !== chromosome.charAt(0), "invert" );
-	     var crossed = ops.crossover( to_cross, chromosome );
-	     t.ok( crossed[0] !== chromosome, "Crossed" );
-	     t.ok( crossed[1] !== to_cross, "Crossed" );
+var population_size = 16,
+population = new Array([]),
+chromosome_size = 16;
+
+test('chromosomes', function (t) {
+     for ( var i = 0; i < population_size; i ++ )  {
+	 var chromosome = new Chromosome (utils.random( chromosome_size ) );
+	 population.push( chromosome );
+	 t.equal(chromosome.string.length, chromosome_size, "Length " + chromosome.string + " OK" );
+	 var is_match = chromosome.string.match(/[01]+/g );
+	 t.ok(is_match, "Binary");
+         chromosome.fitness =  utils.max_ones( chromosome.string );
+	 t.ok( chromosome.fitness >= 0, "fitness" );
+	 var new_chromosome = chromosome.mutate(chromosome);
+	 t.ok( new_chromosome.string !== chromosome.string, "mutation " + chromosome.string + " - " + new_chromosome.string);
+	     var to_cross = chromosome.invert( chromosome );
+	     t.ok( to_cross.string.charAt(0) !== chromosome.string.charAt(0), "invert" );
+	     var crossed = chromosome.crossover( to_cross, chromosome );
+	     t.ok( crossed[0].string !== chromosome.string, "Crossed" );
+	     t.ok( crossed[1].string !== to_cross.string, "Crossed" );
 	 }
 
          t.end();
 });
 
+/*
 test('Nodeo', function(t) {
     var eo = new nodeo.Nodeo( { population_size: population_size,
 				chromosome_size: chromosome_size,
