@@ -1,6 +1,7 @@
 var test = require('tap').test,
 utils = require(__dirname + '/../../lib/Utils.js'),
-nodeo = require(__dirname + '/../../lib/nodeo.js');
+nodeo = require(__dirname + '/../../lib/nodeo.js'),
+ops = require(__dirname + '/../../lib/ops.js');
 
 var population_size = 16;
 var chromosome_size = 16;
@@ -23,11 +24,11 @@ test('chromosomes', function (t) {
 	     t.ok(is_match, "Binary");
              fitness_of[chromosome] =  utils.max_ones( chromosome );
 	     t.ok( fitness_of[chromosome] >= 0, "fitness" );
-	     var new_chromosome = nodeo.mutate(chromosome);
+	     var new_chromosome = ops.mutate(chromosome);
 	     t.ok( new_chromosome !== chromosome, "mutation " + chromosome + " - " + new_chromosome);
-	     var to_cross = nodeo.invert( chromosome );
+	     var to_cross = ops.invert( chromosome );
 	     t.ok( to_cross.charAt(0) !== chromosome.charAt(0), "invert" );
-	     var crossed = nodeo.crossover( to_cross, chromosome );
+	     var crossed = ops.crossover( to_cross, chromosome );
 	     t.ok( crossed[0] !== chromosome, "Crossed" );
 	     t.ok( crossed[1] !== to_cross, "Crossed" );
 	 }
@@ -44,7 +45,7 @@ test('Nodeo', function(t) {
     
     var chosen = eo.tournament_selection( tournament_size, pool_size);
     t.equal( chosen.length, pool_size, "Size OK");
-    var new_population = eo.reproduction( chosen);
+    var new_population = ops.reproduction( chosen);
     t.equal( new_population.length, population_size, "Size OK");
     eo.generation();
     var the_best = eo.population[0];
