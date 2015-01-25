@@ -13,24 +13,27 @@ population = new Array([]),
 chromosome_size = 16;
 
 test('chromosomes', function (t) {
-     for ( var i = 0; i < population_size; i ++ )  {
-	 var chromosome = new Chromosome (utils.random( chromosome_size ) );
-	 population.push( chromosome );
-	 t.equal(chromosome.string.length, chromosome_size, "Length " + chromosome.string + " OK" );
-	 var is_match = chromosome.string.match(/[01]+/g );
-	 t.ok(is_match, "Binary");
-         chromosome.fitness =  utils.max_ones( chromosome.string );
-	 t.ok( chromosome.fitness >= 0, "fitness" );
-	 var new_chromosome = chromosome.mutate(chromosome);
-	 t.ok( new_chromosome.string !== chromosome.string, "mutation " + chromosome.string + " - " + new_chromosome.string);
-	     var to_cross = chromosome.invert( chromosome );
-	     t.ok( to_cross.string.charAt(0) !== chromosome.string.charAt(0), "invert" );
-	     var crossed = chromosome.crossover( to_cross, chromosome );
-	     t.ok( crossed[0].string !== chromosome.string, "Crossed" );
-	     t.ok( crossed[1].string !== to_cross.string, "Crossed" );
-	 }
+    for ( var i = 0; i < population_size; i ++ )  {
+	var chromosome = new Chromosome (utils.random( chromosome_size ) );
+	population.push( chromosome );
+	t.equal(chromosome.string.length, chromosome_size, "Length " + chromosome.string + " OK" );
+	var is_match = chromosome.string.match(/[01]+/g );
+	t.ok(is_match, "Binary");
+        chromosome.fitness =  utils.max_ones( chromosome.string );
+	t.ok( chromosome.fitness >= 0, "fitness" );
+	var new_chromosome = chromosome.mutate(chromosome);
+	t.ok( new_chromosome.string !== chromosome.string, "mutation " + chromosome.string + " - " + new_chromosome.string);
+	t.equal( new_chromosome.string.length, chromosome.string.length, "Length mutation" );
+	var to_cross = chromosome.invert( chromosome );
+	t.ok( to_cross.string.charAt(0) !== chromosome.string.charAt(0), "invert" );
+	var crossed = chromosome.crossover( to_cross, chromosome );
+	t.ok( crossed[0].string !== chromosome.string, "Crossed" );
+	t.equal( crossed[0].string.length,chromosome.string.length, "Length");
+	t.ok( crossed[1].string !== to_cross.string, "Crossed" );
+	t.equal( crossed[1].string.length,to_cross.string.length, "Length");
+    }
 
-         t.end();
+    t.end();
 });
 
 var tournament_size = 3,
