@@ -33,29 +33,31 @@ test('chromosomes', function (t) {
          t.end();
 });
 
-/*
+var tournament_size = 3,
+pool_size = population_size;
+
 test('Nodeo', function(t) {
-    var eo = new nodeo.Nodeo( { population_size: population_size,
-				chromosome_size: chromosome_size,
-				fitness_func: utils.max_ones } );
+    var eo = new Classic( { population_size: population_size,
+			    chromosome_size: chromosome_size,
+			    fitness_func: utils.max_ones } );
     console.log(eo);
     t.ok( eo, "Tipo");
-    
+    var dummy = new Chromosome();
     var chosen = eo.tournament_selection( tournament_size, pool_size);
     t.equal( chosen.length, pool_size, "Size OK");
-    var new_population = ops.reproduction( chosen);
+    var new_population = dummy.reproduction( chosen);
     t.equal( new_population.length, population_size, "Size OK");
     eo.generation();
     var the_best = eo.population[0];
-    var the_best_fitness = eo.fitness_of[the_best];
+    var the_best_fitness = the_best.fitness;
     eo.generation();
-    t.ok( eo.fitness_of[eo.population[0]] >= the_best_fitness, "Improving fitness" );
+    t.ok( eo.population[0].fitness >= the_best_fitness, "Improving fitness" );
     do {
 	eo.generation();
-    } while ( eo.fitness_of[eo.population[0]] < chromosome_size );
-    t.equal(eo.fitness_of[eo.population[0]], chromosome_size, "Finished EA" );
+    } while ( eo.population[0].fitness < chromosome_size );
+    t.equal(eo.population[0].fitness, chromosome_size, "Finished EA" );
     t.end();
 });
 
 
-*/
+
