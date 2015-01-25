@@ -26,14 +26,28 @@ module.exports = function(grunt) {
 		    output: 'docs/'
 		}
 	    }
+	},
+	browserify: {
+	    standalone: {
+		src: [ 'app/classic-ea.js' ],
+		dest: './dist/nodeo.standalone.js',
+		options: {
+		    browserifyOptions: {
+			standalone: 'nodeo'
+		    }
+		}
+	    },
 	}
     });
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-docco');
+    grunt.loadNpmTasks('grunt-browserify');
 
     // Default task.
     grunt.registerTask('default', ['jshint']);
     grunt.registerTask('docs', ['docco']);
+    grunt.registerTask('browsify', ['browserify']);
+
 };

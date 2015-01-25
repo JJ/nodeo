@@ -17,6 +17,7 @@
   "devDependencies": {
     "docco": "~0.6.3",
     "grunt": "~0.4.5",
+    "grunt-browserify": "^3.3.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-docco": "~0.3.3",
     "hint-hint": "~0.3.0",
