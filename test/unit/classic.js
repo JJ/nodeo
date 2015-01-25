@@ -1,12 +1,5 @@
 var test = require('tap').test,
-utils = require(__dirname + '/../../lib/Utils.js'),
 Classic = require(__dirname + '/../../lib/classic.js');
-
-var population_size = 16;
-var chromosome_size = 16;
-var population = new Array([]);
-var tournament_size = 3;
-var pool_size = population_size;
 
 test('loads', function (t) {
          t.ok(Classic, 'Loaded OK');
