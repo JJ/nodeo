@@ -8,7 +8,7 @@ function tabify ( bitstring ) {
 	    tab += "white";
 	}
 	tab+="'> </td>";
-	if (  i % 40 == 39 )  {
+	if (  (i + 1 ) % 40 == 0 )  {
 	    console.log( i );
 	    tab += "</tr>\n<tr>";
 	}
