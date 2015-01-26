@@ -1,20 +1,53 @@
+function tabify ( bitstring ) {
+    var tab = "<table style='border:1px solid black;padding:0;margin:0'><tr>";
+    for ( var i = 0; i < bitstring.length; i ++ ) {
+	tab += "<td style='background-color:";
+	if (bitstring.substring(i,i+1) == "1") {
+	    tab += "black";
+	} else {
+	    tab += "white";
+	}
+	tab+="'> </td>";
+	if ( i % 40 == 0 )  {
+	    console.log( i );
+	    tab += "</tr>\n<tr>";
+	}
+    }
+    tab += "</tr></table>";
+    return tab;
+}
+
 !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var o;"undefined"!=typeof window?o=window:"undefined"!=typeof global?o=global:"undefined"!=typeof self&&(o=self),o.nodeo=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (process){
 
 var Classic = require('../lib/classic.js'),
 utils = require('../lib/Utils.js');
 
-var population_size = process.argv[2] || 64;
-var chromosome_size = process.argv[3] || 64;
+var population_size = process.argv[2] || 128;
+var chromosome_size = process.argv[3] || 128;
 
 var eo = new Classic( { population_size: population_size,
 			chromosome_size: chromosome_size,
 			fitness_func: utils.max_ones } );
 
-do {
+var generation_count=0;
+
+(function do_ea() {
     eo.generation();
-} while ( eo.population[0].fitness < chromosome_size );
-document.getElementById('res').innerHTML = eo.population[0].string + " " + eo.population[0].fitness;
+    generation_count++;
+    if ( (generation_count % 20 === 0) ) {
+	console.log(generation_count);
+	document.getElementById('res').innerHTML = tabify(eo.population[0].string);
+    }
+
+    if ( eo.population[0].fitness < chromosome_size ) {
+	setTimeout(do_ea, 5);
+    } else {
+	console.log(  eo.population[0] );
+	document.getElementById('res').innerHTML = tabify(eo.population[0].string);
+    }
+})();
+    
 
 }).call(this,require('_process'))
 },{"../lib/Utils.js":2,"../lib/classic.js":4,"_process":6}],2:[function(require,module,exports){
@@ -25,10 +58,6 @@ document.getElementById('res').innerHTML = eo.population[0].string + " " + eo.po
  * @package nodeo
  * @author J. J. Merelo <jjmerelo@gmail.com>
  */
-
-// To avoid uncomprehensible radix complaint at charAt
-/*jshint -W065 */
-/*jshint smarttabs:true */
 
 var Utils = exports;
 
