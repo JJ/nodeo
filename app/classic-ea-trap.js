@@ -2,6 +2,9 @@
 
 'use strict';
 
+// Optimization of the deceptive trap function
+// It might take a long time... or never end. Just ctrl-C when you're done.
+
 var Classic = require('../lib/classic.js'),
 trap = require('../lib/trap.js');
 
