@@ -1,20 +1,25 @@
 !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var o;"undefined"!=typeof window?o=window:"undefined"!=typeof global?o=global:"undefined"!=typeof self&&(o=self),o.nodeo=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (process){
 
-    var Classic = require('../lib/classic.js'),
-    utils = require('../lib/Utils.js');
-    
-    var population_size = 32;
-    var chromosome_size = 32;
-    
-    var eo = new Classic( { population_size: population_size,
-			    chromosome_size: chromosome_size,
-			    fitness_func: utils.max_ones } );
-    
-    do {
-	eo.generation();
-    } while ( eo.population[0].fitness < chromosome_size );
-    document.getElementById('res').innerHTML = eo.population[0].string + " " + eo.population[0].fitness;
+
+'use strict';
+
+var Classic = require('../lib/classic.js'),
+utils = require('../lib/Utils.js');
+
+var population_size = process.argv[2] || 256;
+var chromosome_size = process.argv[3] || 256;
+
+var eo = new Classic( { population_size: population_size,
+			chromosome_size: chromosome_size,
+			fitness_func: utils.max_ones } );
+
+do {
+    eo.generation();
+    console.log( eo.population[0] );
+} while ( eo.population[0].fitness < chromosome_size );
+
+console.log(eo.population);
 
 }).call(this,require('_process'))
 },{"../lib/Utils.js":2,"../lib/classic.js":4,"_process":6}],2:[function(require,module,exports){
@@ -76,21 +81,20 @@ module.exports = Chromosome;
 
 // Bit-flips the whole chromosome
 function invert (chromosome) {
-    var inverted = new Chromosome( "" );
-    for (var i = 0; i < inverted.length; i ++ ) {
+    var inverted='';
+    for (var i = 0; i < chromosome.string.length; i ++ ) {
 	inverted += chromosome.string.charAt(i).match(/1/)?"0":"1";
     }
-    return inverted;
+    return new Chromosome (inverted);
 }
 
 // Bit-flips a single bit
 function mutate (chromosome ) {
 
-    var mutation_point = Math.floor( Math.random() * chromosome.length);
+    var mutation_point = Math.floor( Math.random() * chromosome.string.length);
     var temp = chromosome.string;
-    var clone = chromosome.string; 
     var flip_bit = temp.charAt(mutation_point).match(/1/)?"0":"1";
-    clone = temp.substring(0,mutation_point) +
+    var clone = temp.substring(0,mutation_point) +
 	flip_bit + 
 	temp.substring(mutation_point+1,temp.length) ;
     return new Chromosome( clone );
@@ -107,7 +111,7 @@ function crossover ( chrom1, chrom2 ) {
 	chrom1.string.substring(xover_point+range,length);
     new_chrom2+= chrom1.string.substring(xover_point,xover_point+range) +
 	chrom2.string.substring(xover_point+range,length);
-   return [new Chromosome(new_chrom1), new Chromosome(new_chrom2)];
+    return [new Chromosome(new_chrom1), new Chromosome(new_chrom2)];
 }
 
 // Applies operators to the pool
