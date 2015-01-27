@@ -37,6 +37,16 @@ module.exports = function(grunt) {
 		    }
 		}
 	    },
+	    trap: {
+		src: [ 'app/classic-ea-trap.js' ],
+		dest: './dist/trap.standalone.js',
+		options: {
+		    browserifyOptions: {
+			standalone: 'nodeo'
+		    }
+		}
+	    }
+	    
 	}
     });
 
