@@ -2,11 +2,12 @@
 
 * [ ] Write more docs.
   * [ ] Check current docs for things that shouldn't be there
-  * [ ] Document functions and classes.
+  * [x] Document functions and classes.
 * [ ] Add fitness functions
 * [ ] Write a tutorial
-* [ ] Adapt to running in the browser.
+* [x] Adapt to running in the browser.
 * [x] Add badges.
   * [x] Added npm badge.
-* [x] Add coverage tests.
+* [ ] Add coverage tests.
 	* [x] Make all functions pass.
+* [ ] Refactor to proper module design style.
