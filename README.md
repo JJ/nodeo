@@ -1,5 +1,7 @@
 # NodEO
 
+[![Join the chat at https://gitter.im/JJ/nodeo](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JJ/nodeo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![NPM](https://nodei.co/npm/nodeo.png)](https://npmjs.org/package/nodeo)
 
 ## Evolutionary Algorithm, simplified, for node
