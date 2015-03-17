@@ -1,5 +1,7 @@
 var test = require('tap').test,
-    functions = require(__dirname + '/../../lib/functions.js');
+nodeo = require(__dirname + '/../../lib/nodeo.js');
+
+var functions = nodeo.functions;
 
 var dimensions = [10, 20, 30];
 
