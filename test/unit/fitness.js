@@ -1,9 +1,11 @@
 var test = require('tap').test,
-trap = require(__dirname + '/../../lib/trap.js'),
-mmdp = require(__dirname + '/../../lib/MMDP.js'),
-functions = require(__dirname + '/../../lib/functions.js'),
-ackley = require(__dirname + '/../../lib/Ackley.js');
-console.log(trap);
+nodeo = require(__dirname + '/../../lib/nodeo.js');
+
+var trap = nodeo.trap;
+mmdp = nodeo.MMDP;
+functions = nodeo.functions;
+ackley = nodeo.Ackley;
+
 
 test('loads', function (t) {
          t.ok(trap, 'Loaded OK');
