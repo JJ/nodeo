@@ -1,7 +1,8 @@
 var test = require('tap').test,
-utils = require(__dirname + '/../../lib/Utils.js'),
-nodeo = require(__dirname + '/../../lib/nodeo.js'),
-ops = require(__dirname + '/../../lib/ops.js');
+nodeo = require(__dirname + '/../../lib/nodeo.js');
+
+var utils = nodeo.utils,
+ops = nodeo.ops; 
 
 var population_size = 16;
 var chromosome_size = 16;
