@@ -1,0 +1,12 @@
+{  "port": 3000,
+   "generation_run": 20,
+   "max_evaluations": 1000000,
+   "population_size": 512,
+   "output_preffix": "testing",
+   "fitness": { "l": 4, 
+	      "a": 1, 
+	      "b": 2, 
+	      "z": 3,
+	      "traps": 40 }
+}
+
