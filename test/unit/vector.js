@@ -17,7 +17,6 @@ test('random', function (t) {
     t.end();
 });
 
-
 var population_size = 16,
 chromosome_size = 2;
 
