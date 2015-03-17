@@ -1,7 +1,8 @@
 var test = require('tap').test,
-utils = require(__dirname + '/../../lib/Utils.js'),
-vector = require(__dirname + '/../../lib/vector.js');
+nodeo = require(__dirname + '/../../lib/nodeo.js');
 
+var utils = nodeo.utils,
+vector = nodeo.vector;
 
 test('loads', function (t) {
     t.ok(vector, 'Loaded OK');
