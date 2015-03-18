@@ -1,0 +1,12 @@
+/* MacOS */
+.DS_Store
+
+/* NPM */
+/node_modules
+npm*
+
+/* backup */
+*~
+
+/* app */ 
+app/
