@@ -2,7 +2,8 @@
 
 'use strict';
 
-var Classic = require('../lib/classic.js'),
+var  nodeo = require('../lib/nodeo.js'),
+Classic = nodeo.classic,
 utils = nodeo.utils;
 
 var population_size = process.argv[2] || 256;
