@@ -8,7 +8,7 @@
   },
   "main": "./lib/nodeo.js",
   "scripts": {
-    "test": "make test"
+    "test": "tap test/governance/*.js test/unit/*.js"
   },
   "dependencies": {
     "coveralls": "~2.11.2",
