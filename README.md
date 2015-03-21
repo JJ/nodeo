@@ -4,6 +4,9 @@
 
 [![NPM](https://nodei.co/npm/nodeo.png)](https://npmjs.org/package/nodeo)
 
+[![npm version](https://badge.fury.io/js/nodeo.svg)](http://badge.fury.io/js/nodeo)
+
+
 ## Evolutionary Algorithm, simplified, for node
 
 NodEO includes the functions necessary to create a simple evolutionary algorithm in JavaScript in CommonJS format, for
