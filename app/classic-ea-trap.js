@@ -5,8 +5,9 @@
 // Optimization of the deceptive trap function
 // It might take a long time... or never end. Just ctrl-C when you're done.
 
-var Classic = require('../lib/classic.js'),
-trap = require('../lib/trap.js');
+var  nodeo = require('../lib/nodeo.js'),
+Classic = nodeo.classic,
+trap = nodeo.trap;
 
 var population_size = process.argv[2] || 256;
 var traps = process.argv[3] || 100;
