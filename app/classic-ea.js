@@ -3,7 +3,7 @@
 'use strict';
 
 var Classic = require('../lib/classic.js'),
-utils = require('../lib/Utils.js');
+utils = nodeo.utils;
 
 var population_size = process.argv[2] || 256;
 var chromosome_size = process.argv[3] || 256;
