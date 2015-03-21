@@ -8,8 +8,6 @@ layout: index
 
 [![NPM](https://nodei.co/npm/nodeo.png)](https://npmjs.org/package/nodeo)
 
-[![npm version](https://badge.fury.io/js/nodeo.svg)](http://badge.fury.io/js/nodeo)
-
 
 ## Evolutionary Algorithm, simplified, for node
 
