@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var nodeo = require('../lib/nodeo.js'),
-trap = require('../lib/trap.js'),
+trap = nodeo.trap,
 fs= require('fs');
 
 var conf_file = process.argv[2] || 'nodeo.json';
