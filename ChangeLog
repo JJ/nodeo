@@ -1,0 +1,5 @@
+2015-03-28  Juan J. merelo  <jmerelo@penny>
+
+	* package.json: Reincorporates the "incorporate" function that was
+	deleted in the past.
+
