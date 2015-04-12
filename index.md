@@ -22,15 +22,48 @@ they have been implemented in JavaScript.
 
 [![Build Status](https://travis-ci.org/JJ/nodeo.png)](https://travis-ci.org/JJ/nodeo)
 
+## How to start
+
+Hints on installing and running it.
+
 ### Installation
+
 ```bash
 npm install nodeo
 ```
 
-### Testing
+You can also clone it from this repo:
 ```bash
+git clone git@github.com:JJ/nodeo.git
+```
+
+### Testing
+
+If you have downloaded it from `npm`, it's already tested. If you have cloned it,
+
+```bash
+npm install 
 npm test
 ```
+
+
+### Running an evolutionary algorithm
+
+There's a simple evolutionary algorithm in the `app` directory, 
+
+	cd node_modules/nodeo
+	node app/ea.js
+
+or
+
+	node app/classic-ea.js
+
+for the version with a bit more complicated data structures and no cached fitness function (lighter on the memory front).
+
+
+## How to go further
+
+You can try and add your own stuff. Start here
 
 ### Developing
 
@@ -54,23 +87,10 @@ to check the code or
 to generate a browser-ready evolutionary algorithm based on the `classic` version.
 
 
-### Running an evolutionary algorithm
-
-There's a simple evolutionary algorithm in the `app` directory, 
-
-	cd node_modules/nodeo
-	node app/ea.js
-
-or
-
-	node app/classic-ea.js
-
-for the version with a bit more complicated data structures and no cached fitness function (lighter on the memory front).
-
 
 ## Problems? Questions?
 
-Please use [GitHub issues](https://github.com/JJ/nodeo/issues) and I'll try to help you. 
+Please use [GitHub issues](https://github.com/JJ/nodeo/issues) and I'll try to help you. Can't guarantee I'll be in Gitter, but if that's your thing, please go ahead and try it, I'll arrive eventually. 
 
 
 
