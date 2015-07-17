@@ -1,0 +1,7 @@
+#Contributing to `nodeo` HowTo
+
+The best way to do it is to create a pull request by forking, modifying and requesting a pull using the `hub` GitHub command line tool or directly from the web.
+
+I'm not too picky about features and stuff. If it fixes an error, I would be grateful if you first created an issue indicating the bug you're about to fix. If it's a new feature, I'll gladly accept it. This is not in a stage where I can, like, reject new features. But as you might have seen, features are all tested so no new feature accepted without the corresponding test. Test it in advance using `npm test` or let Travis do the work for you. Obviously, no new feature will be accepted if it does not pass the test.
+
+Anything not covered here? Raise an issue and I'll comply.
