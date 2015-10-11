@@ -23,8 +23,8 @@ function tabify ( bitstring ) {
 var Classic = require('../lib/classic.js'),
 utils = require('../lib/Utils.js');
 
-var population_size = process.argv[2] || 128;
-var chromosome_size = process.argv[3] || 128;
+var population_size = 128;
+var chromosome_size = 128;
 
 var eo = new Classic( { population_size: population_size,
 			chromosome_size: chromosome_size,

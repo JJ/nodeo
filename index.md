@@ -9,11 +9,13 @@ layout: index
 [![NPM](https://nodei.co/npm/nodeo.png)](https://npmjs.org/package/nodeo)
 
 
-## Evolutionary Algorithm, simplified, for node
+## Evolutionary Algorithm, simplified, for node.js
 
-NodEO includes the functions necessary to create a simple evolutionary algorithm in JavaScript in CommonJS format, for
-node.js and anything else that uses that format. Can be (and indeed has been) converted to the browser using
-[Browserify](http://browserify.org/). Check out
+NodEO includes the functions necessary to create a simple evolutionary
+algorithm using JavaScript in CommonJS format, for 
+node.js and anything else that uses that format. A
+[Browserify](http://browserify.org/)ed version is also included in the
+distribution and can be installed using `bower`. Check out
 [the presentation I did for FOSDEM](http://jj.github.io/js-ga-fosdem/#/home)
 in case you want to know more about evolutionary algorithms and how
 they have been implemented in JavaScript.
@@ -30,6 +32,12 @@ Hints on installing and running it.
 
 ```bash
 npm install nodeo
+```
+
+Or the browser version
+
+```bash
+bower install nodeo
 ```
 
 You can also clone it from this repo:
@@ -58,12 +66,19 @@ or
 
 	node app/classic-ea.js
 
-for the version with a bit more complicated data structures and no cached fitness function (lighter on the memory front).
+or
+
+	node app/classic-ea-trap.js
+	
+for the version with a bit more complicated data structures and no
+cached fitness function (lighter on the memory front), this last one
+implementing the Trap function we cherish so much.
 
 
 ## How to go further
 
-You can try and add your own stuff. Start here
+You can try and add your own stuff fitness functions and operators to
+this module. Start here:
 
 ### Developing
 
@@ -84,13 +99,15 @@ to check the code or
 
 	grunt browsify
 
-to generate a browser-ready evolutionary algorithm based on the `classic` version.
-
+to generate a browser-ready evolutionary algorithm based on the
+`classic` version and the library.
 
 
 ## Problems? Questions?
 
-Please use [GitHub issues](https://github.com/JJ/nodeo/issues) and I'll try to help you. Can't guarantee I'll be in Gitter, but if that's your thing, please go ahead and try it, I'll arrive eventually. 
+Please use [GitHub issues](https://github.com/JJ/nodeo/issues) and
+I'll try to help you. Can't guarantee I'll be in Gitter, but if that's
+your thing, please go ahead and try it, I'll arrive eventually.
 
 
 
