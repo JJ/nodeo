@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Creating an evolutionary algorithm in the browser</title>
+  <meta name="description" content="En evolutionary algorithm in every browser using NodEO">
+  <meta name="author" content="JJ Merelo">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1>Check out the evolutionary algorithm in the browser console</h1>
+  <script src="../nodeo.lib.js"></script>
+
+  <script>
+    console.log(nodeo);
+    var 
+    Classic = nodeo.classic,
+    utils = nodeo.utils;
+
+var population_size = 256;
+var chromosome_size = 256;
+
+var eo = new Classic( { population_size: population_size,
+			chromosome_size: chromosome_size,
+			fitness_func: utils.max_ones } );
+console.log(population_size);
+do {
+    eo.generation();
+    console.log( eo.population[0] );
+} while ( eo.population[0].fitness < chromosome_size );
+
+console.log(eo.population);
+</script>
+
+</body>
+</html>
