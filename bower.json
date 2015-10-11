@@ -1,6 +1,6 @@
 {
   "name": "NodEO",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "homepage": "https://github.com/JJ/nodeo",
   "authors": [
     "JJ Merelo <jjmerelo@gmail.com>"
@@ -20,8 +20,8 @@
       "bower_components",
       "test",
       "tests",
-      "lib",
-      "app",
+      "lib/",
+      "app/",
       "TODO.md",
       "Changelog",
       "package.json"
