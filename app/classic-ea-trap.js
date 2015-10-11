@@ -9,7 +9,7 @@ var  nodeo = require('../lib/nodeo.js'),
 Classic = nodeo.classic,
 trap = nodeo.trap;
 
-var population_size = process.argv[2] || 256;
+var population_size = process.argv[2] || 4096;
 var traps = process.argv[3] || 100;
 var trap_len = process.argv[4] || 4;
 var trap_b = process.argv[5] || 2;
