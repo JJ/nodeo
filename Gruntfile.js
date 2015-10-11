@@ -28,6 +28,16 @@ module.exports = function(grunt) {
 	    }
 	},
 	browserify: {
+	    lib: {
+		src: [ 'lib/nodeo.js' ],
+		dest: './dist/nodeo.lib.js',
+		options: {
+		    browserifyOptions: {
+			standalone: 'nodeo'
+		    }
+		}
+	    },
+
 	    standalone: {
 		src: [ 'app/classic-ea.js' ],
 		dest: './dist/nodeo.standalone.js',

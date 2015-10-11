@@ -1,0 +1,24 @@
+{
+  "name": "NodEO",
+  "version": "0.0.5",
+  "homepage": "https://github.com/JJ/nodeo",
+  "authors": [
+    "JJ Merelo <jjmerelo@gmail.com>"
+  ],
+  "description": "Evolutionary algorithm library",
+  "main": "nodeo.lib.js",
+  "moduleType": [],
+  "keywords": [
+    "evolutionary algorithms",
+    "genetic algorithms",
+    "optimization"
+  ],
+  "license": "GPL v3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
