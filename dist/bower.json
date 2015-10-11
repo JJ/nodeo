@@ -15,10 +15,15 @@
   ],
   "license": "GPL v3",
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+      "**/.*",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests",
+      "lib",
+      "app",
+      "TODO.md",
+      "Changelog",
+      "package.json"
   ]
 }
