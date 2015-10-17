@@ -1,10 +1,11 @@
 var test = require('tap').test,
 nodeo = require(__dirname + '/../../lib/nodeo.js');
 
-var trap = nodeo.trap;
-mmdp = nodeo.MMDP;
-functions = nodeo.functions;
-ackley = nodeo.Ackley;
+var trap = nodeo.trap,
+mmdp = nodeo.MMDP,
+functions = nodeo.functions,
+ackley = nodeo.Ackley,
+HIFF = nodeo.HIFF;
 
 
 test('loads', function (t) {
