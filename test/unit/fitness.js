@@ -5,7 +5,7 @@ var trap = nodeo.trap,
 mmdp = nodeo.MMDP,
 functions = nodeo.functions,
 ackley = nodeo.Ackley,
-HIFF = nodeo.HIFF;
+hiff = nodeo.HIFF;
 
 
 test('loads', function (t) {
@@ -53,6 +53,22 @@ test("MMDP", function(t) {
 	 t.equal( this_mmdp.apply(many_mmdp), sum, "Many MMDP");
 
 	 t.end();
+});
+
+test("HIFF", function(t) {
+    var this_HIFF = new hiff.HIFF();
+    var many_HIFF ='';
+    var sum = 0;
+    var subjects= { '1100': 8,
+		    '1011': 6 };
+    for ( var i in subjects ) {
+	many_HIFF +=i;
+	sum += subjects[i];
+	t.equal( this_HIFF.apply(i), subjects[i], "HIFF " + i + " = " + subjects[i]);
+    }
+    t.equal( this_HIFF.apply(many_HIFF), sum, "Many HIFF");
+
+    t.end();
 });
 
 
