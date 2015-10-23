@@ -11,11 +11,9 @@
     "scripts": {
 	"test": "tap test/governance/*.js test/unit/*.js"
     },
-    "dependencies": {
-	"coveralls": "~2.11.2",
-	"mocha-lcov-reporter": "0.0.1"
-    },
     "devDependencies": {
+	"coveralls": "~2.11.2",
+	"mocha-lcov-reporter": "0.0.1",
 	"docco": "~0.6.3",
 	"grunt": "~0.4.5",
 	"grunt-browserify": "^3.3.0",
