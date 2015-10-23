@@ -70,12 +70,14 @@ function test_trap(t, params, subjects ) {
 
 test("rastrigin", function(t) {
 	 for (var i in dimensions) {
-	     var x = [];
-	     for ( var j = 0; j < dimensions[i]; j++) {
-		 x.push(0);
-	     }
-	     t.equal( functions.Rastrigin(x), 0,
+	 	if(dimensions.hasOwnProperty(i)) {
+	    	var x = [];
+	    	for ( var j = 0; j < dimensions[i]; j++) {
+				x.push(0);
+	    	}
+	    t.equal( functions.Rastrigin(x), 0,
 	             "Optimum for dimension "+ dimensions[i] + " OK" );
+		}
      }
 	 t.end();
 });
