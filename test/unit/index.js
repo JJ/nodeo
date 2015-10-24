@@ -16,27 +16,6 @@ test('loads', function (t) {
          t.end();
      });
 
-test('chromosomes', function (t) {
-	 for ( var i = 0; i < population_size; i ++ )  {
-	     var chromosome = utils.random( chromosome_size );
-	     population.push( chromosome );
-	     t.equal(chromosome.length, chromosome_size, "Length " + chromosome + " OK" );
-	     var is_match = chromosome.match(/[01]+/g );
-	     t.ok(is_match, "Binary");
-             fitness_of[chromosome] =  utils.max_ones( chromosome );
-	     t.ok( fitness_of[chromosome] >= 0, "fitness" );
-	     var new_chromosome = ops.mutate(chromosome);
-	     t.ok( new_chromosome !== chromosome, "mutation " + chromosome + " - " + new_chromosome);
-	     var to_cross = ops.invert( chromosome );
-	     t.ok( to_cross.charAt(0) !== chromosome.charAt(0), "invert" ); // might be the same...
-	     var crossed = ops.crossover( to_cross, chromosome );
-	     t.ok( crossed[0] !== chromosome, "Crossed" );
-	     t.ok( crossed[1] !== to_cross, "Crossed" );
-	 }
-
-         t.end();
-});
-
 test('Nodeo', function(t) {
     var eo = new nodeo.Nodeo( { population_size: population_size,
 				chromosome_size: chromosome_size,
