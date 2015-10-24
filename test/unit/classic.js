@@ -13,6 +13,14 @@ var population_size = 16,
 population = new Array([]),
 chromosome_size = 16;
 
+function palindrome( str ) {
+    var palindrome = true;
+    for ( var i = 0; i < str.length/2; i++ ) { 
+	palindrome = palindrome && (str.charAt(i) ===  str.charAt(str.length-1-i))
+    }
+    return palindrome;
+}
+
 test('chromosomes', function (t) {
     for ( var i = 0; i < population_size; i ++ )  {
 	var chromosome = new Chromosome (nodeo.utils.random( chromosome_size ) );
@@ -25,13 +33,15 @@ test('chromosomes', function (t) {
 	var new_chromosome = chromosome.mutate(chromosome);
 	t.ok( new_chromosome.string !== chromosome.string, "mutation " + chromosome.string + " - " + new_chromosome.string);
 	t.equal( new_chromosome.string.length, chromosome.string.length, "Length mutation" );
-	var to_cross = chromosome.invert( chromosome );
-	t.ok( to_cross.string.charAt(0) !== chromosome.string.charAt(0), "invert" );
-	var crossed = chromosome.crossover( to_cross, chromosome );
-	t.ok( crossed[0].string !== chromosome.string, "Crossed" );
-	t.equal( crossed[0].string.length,chromosome.string.length, "Length");
-	t.ok( crossed[1].string !== to_cross.string, "Crossed" );
-	t.equal( crossed[1].string.length,to_cross.string.length, "Length");
+	if ( !palindrome( new_chromosome.string ) ) {
+	    var to_cross = chromosome.invert( chromosome );
+	    t.ok( to_cross.string.charAt(0) !== chromosome.string.charAt(0), "invert" );
+	    var crossed = chromosome.crossover( to_cross, chromosome );
+	    t.ok( crossed[0].string !== chromosome.string, "Crossed" );
+	    t.equal( crossed[0].string.length,chromosome.string.length, "Length");
+	    t.ok( crossed[1].string !== to_cross.string, "Crossed" );
+	    t.equal( crossed[1].string.length,to_cross.string.length, "Length");
+	}
     }
 
     t.end();
