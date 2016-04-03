@@ -92,7 +92,10 @@ to check the code or
 to generate a browser-ready evolutionary algorithm based on the
 `classic` version. 
 
+## Do you want to help in an evolutionary computing experiment?
 
+It's sometimes [running here](http://nodio-jmerelo.rhcloud.com/). It
+is a browserified version of this evolutionary algorithm.
 
 ## Problems? Questions?
 
