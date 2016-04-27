@@ -1,5 +1,7 @@
 # Things to do
 
+* [ ] Test with new versions
+	[ ] Test with recent 6.0
 * [ ] Write more docs.
   * [ ] Check current docs for things that shouldn't be there
   * [x] Document functions and classes.
