@@ -5,6 +5,7 @@ var trap = nodeo.trap,
 mmdp = nodeo.MMDP,
 functions = nodeo.functions,
 ackley = nodeo.Ackley,
+rastrigin = nodeo.Rastrigin,
 hiff = nodeo.HIFF;
 
 
@@ -85,6 +86,23 @@ test("Ackley", function(t) {
 		[0,0,0.1] ];
     for (  i in subjects ) {
 	t.equal( ack.apply(subjects[i]), functions.ackley(subjects[i]), "Ackley " + i + " = " + subjects[i]);
+    }
+    t.end();
+});
+
+test("Rastrigin", function(t) {
+    var subjects= [ [0,0],
+		    [0,0,0] ];
+    var rast = new rastrigin.Rastrigin();
+
+    for ( var i in subjects ) {
+	t.equal( functions.Rastrigin(subjects[i]), 0, "Rastrigin " + i + " = " + subjects[i]);
+	t.equal( rast.apply(subjects[i]), 0, "Rastrigin f " + i + " = " + subjects[i]);
+    }
+    subjects= [ [0,0.5],
+		[0,0,0.1] ];
+    for (  i in subjects ) {
+	t.equal( rast.apply(subjects[i]), functions.Rastrigin(subjects[i]), "Rastrigin " + i + " = " + subjects[i]);
     }
     t.end();
 });

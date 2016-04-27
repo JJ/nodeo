@@ -45,25 +45,30 @@ npm test
 
 ### Running an evolutionary algorithm
 
-There's a simple evolutionary algorithm in the `app` directory, 
+There's a simple evolutionary algorithm in the `app` directory of this
+repository. Run
 
-	cd node_modules/nodeo
 	node app/ea.js
 
 or
 
 	node app/classic-ea.js
 
-for the version with a bit more complicated data structures and no cached fitness function (lighter on the memory front).
+from the command line, for the version with a bit more complicated
+data structures and no cached fitness function (lighter on the memory
+front). 
 
 
 ## How to go further
 
-You can try and add your own stuff. Start here
+You can try and add your own stuff to the library. Start here
 
-### Developing
+### Contributing.
 
-You will have to install a bit of more stuff, including Grunt, which, for the time being, is used to check code and generate documentation. That is
+You will have to install a bit of more stuff, including Grunt, which,
+for the time being, is used to check code and generate
+documentation. That is
+
 ```bash
 npm install -g grunt-cli
 ```
@@ -80,13 +85,19 @@ to check the code or
 
 	grunt browsify
 
-to generate a browser-ready evolutionary algorithm based on the `classic` version.
+to generate a browser-ready evolutionary algorithm based on the
+`classic` version. 
 
+## Do you want to help in an evolutionary computing experiment?
 
+It's sometimes [running here](http://nodio-jmerelo.rhcloud.com/). It
+is a browserified version of this evolutionary algorithm.
 
 ## Problems? Questions?
 
-Please use [GitHub issues](https://github.com/JJ/nodeo/issues) and I'll try to help you. Can't guarantee I'll be in Gitter, but if that's your thing, please go ahead and try it, I'll arrive eventually. 
+Please use [GitHub issues](https://github.com/JJ/nodeo/issues) and
+I'll try to help you. Can't guarantee I'll be in Gitter, but if that's
+your thing, please go ahead and try it, I'll arrive eventually. 
 
 
 
