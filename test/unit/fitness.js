@@ -60,14 +60,22 @@ test("HIFF", function(t) {
     var this_HIFF = new hiff.HIFF();
     var many_HIFF ='';
     var sum = 0;
-    var subjects= { '1100': 8,
-		    '1011': 6 };
+    var subjects= { 
+	'10': 2,
+	'1100': 8,
+	'1011': 6,
+	'10101101100100':16,
+	'1010110110010011':22,
+	'010101101100100': 19,
+	'00000000100000': 42,
+	'1111111110000110': 42,
+	'0010110100101101': 24 };
     for ( var i in subjects ) {
 	many_HIFF +=i;
 	sum += subjects[i];
 	t.equal( this_HIFF.apply(i), subjects[i], "HIFF " + i + " = " + subjects[i]);
     }
-    t.equal( this_HIFF.apply(many_HIFF), sum, "Many HIFF");
+    t.equal( this_HIFF.apply(many_HIFF), 163, "Many HIFF");
 
     t.end();
 });
