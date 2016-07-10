@@ -9,16 +9,18 @@
     },
     "main": "./lib/nodeo.js",
     "scripts": {
-	"test": "tap test/governance/*.js test/unit/*.js"
+	"test": "tap test/governance/*.js test/unit/*.js --coverage",
+	"posttest": "tap --coverage-report=lcov | codecov"
     },
     "devDependencies": {
+	"codecov": "^1.0.1",
 	"coveralls": "~2.11.2",
-	"mocha-lcov-reporter": "0.0.1",
 	"docco": "~0.6.3",
 	"grunt-browserify": ">4.0",
 	"grunt-contrib-jshint": ">=1.0",
 	"grunt-docco": "~0.3.3",
 	"hint-hint": "~0.3.0",
+	"mocha-lcov-reporter": "0.0.1",
 	"tap": ">1.0",
 	"underscore": "^1.7.0"
     },
