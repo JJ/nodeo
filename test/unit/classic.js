@@ -36,12 +36,14 @@ test('chromosomes', function (t) {
 	if ( !palindrome( new_chromosome.string ) ) {
 	    var to_cross = Chromosome.invert( chromosome );
 	    t.ok( to_cross.string.charAt(0) !== chromosome.string.charAt(0), "invert" );
-	    var crossed = Chromosome.crossover( to_cross, chromosome );
-	    t.ok( crossed[0].string !== chromosome.string, 
-		  "Crossed 1 " + crossed[0].string + "!==" + chromosome.string);
-	    t.equal( crossed[0].string.length,chromosome.string.length, "Length");
-	    t.ok( crossed[1].string !== to_cross.string, "Crossed 2 " + crossed[1].string + "!==" + chromosome.string);
-	    t.equal( crossed[1].string.length,to_cross.string.length, "Length");
+	    for ( var i = 0; i < 100; i ++ ) {
+		var crossed = Chromosome.crossover( to_cross, chromosome );
+		t.ok( crossed[0].string !== chromosome.string, 
+		      "Crossed " + i + " " + crossed[0].string + "!==" + chromosome.string);
+		t.equal( crossed[0].string.length,chromosome.string.length, "Length");
+		t.ok( crossed[1].string !== to_cross.string, "Crossed 2 " + crossed[1].string + "!==" + chromosome.string);
+		t.equal( crossed[1].string.length,to_cross.string.length, "Length");
+	    }
 	}
     }
 
