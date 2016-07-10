@@ -30,13 +30,13 @@ test('chromosomes', function (t) {
 	t.ok(is_match, "Binary");
         chromosome.fitness =  nodeo.utils.max_ones( chromosome.string );
 	t.ok( chromosome.fitness >= 0, "fitness" );
-	var new_chromosome = chromosome.mutate(chromosome);
+	var new_chromosome = Chromosome.mutate(chromosome);
 	t.ok( new_chromosome.string !== chromosome.string, "mutation " + chromosome.string + " - " + new_chromosome.string);
 	t.equal( new_chromosome.string.length, chromosome.string.length, "Length mutation" );
 	if ( !palindrome( new_chromosome.string ) ) {
-	    var to_cross = chromosome.invert( chromosome );
+	    var to_cross = Chromosome.invert( chromosome );
 	    t.ok( to_cross.string.charAt(0) !== chromosome.string.charAt(0), "invert" );
-	    var crossed = chromosome.crossover( to_cross, chromosome );
+	    var crossed = Chromosome.crossover( to_cross, chromosome );
 	    t.ok( crossed[0].string !== chromosome.string, 
 		  "Crossed 1 " + crossed[0].string + "!==" + chromosome.string);
 	    t.equal( crossed[0].string.length,chromosome.string.length, "Length");
@@ -57,10 +57,9 @@ test('Nodeo', function(t) {
 			    fitness_func: nodeo.utils.max_ones } );
     console.log(eo);
     t.ok( eo, "Tipo");
-    var dummy = new Chromosome();
     var chosen = eo.tournament_selection( tournament_size, pool_size);
     t.equal( chosen.length, pool_size, "Size OK");
-    var new_population = dummy.reproduction( chosen);
+    var new_population = Chromosome.reproduction( chosen);
     t.equal( new_population.length, population_size, "Size OK");
     eo.generation();
     var the_best = eo.population[0];
