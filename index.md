@@ -8,6 +8,7 @@ layout: index
 
 [![NPM](https://nodei.co/npm/nodeo.png)](https://npmjs.org/package/nodeo)
 
+[![codecov](https://codecov.io/gh/JJ/nodeo/branch/master/graph/badge.svg)](https://codecov.io/gh/JJ/nodeo)
 
 ## Evolutionary Algorithm, simplified, for node
 
