@@ -20,3 +20,7 @@ Anything not covered here? Raise an issue and I'll comply.
 If you're looking for something to contribute, any fitness function
 will be fine, we're always short of fitness functions to test. Check
 [Ackley](/lib/Nodeo/Ackley.js) for an example.
+
+## Virtual infraestructure
+
+It would be cook to have Docker containers or Chef recipes. 
