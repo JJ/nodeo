@@ -52,4 +52,11 @@ test("Evaluation", function(t) {
     t.end();
 });
 
+test("Evolution", function(t) {
+    var population = new Population( running_population );
+    population.cull( population_size/2 );
+    t.equal( population.chromosomes().length, population_size/2, "has been erased" );
+    t.end();
+})
+
 
