@@ -48,7 +48,8 @@ test("Evaluation", function(t) {
 	     >= population.fitness_of[sorted_population[1]]
 	     , true
 	     , "Sorted" );
-    
+    var one = population.one();
+    t.equal( one in population.fitness_of, true, "Evaluated" );
     t.end();
 });
 
