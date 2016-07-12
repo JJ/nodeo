@@ -1,6 +1,6 @@
 var test = require('tap').test,
-    fluxeo = require(__dirname + '/../../lib/FluxEO.js'),
-    nodeo = require(__dirname + '/../../lib/nodeo.js');
+nodeo = require(__dirname + '/../../lib/nodeo.js'),
+fluxeo = nodeo.FluxEO;
 
 var Population = fluxeo.Population,
 Selection = fluxeo.Selection,
