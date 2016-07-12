@@ -3,6 +3,8 @@ var test = require('tap').test,
     nodeo = require(__dirname + '/../../lib/nodeo.js');
 
 var Population = fluxeo.Population,
+    Selection = fluxeo.Selection,
+    Tournament = Selection.Tournament,
     mmdp = nodeo.MMDP,
     utils=nodeo.utils;
 
@@ -13,6 +15,7 @@ var this_fitness = function( individual ) {
 
 test('loads', function (t) {
     t.ok(fluxeo, 'Loaded OK');
+    t.ok(Tournament, 'Loaded Tournament OK');
     t.end();
 });
 
