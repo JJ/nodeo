@@ -25,13 +25,17 @@ var random_chromosome_32 = function() {
 
 test("Creation", function(t) {
     var population = new Population();
+    var eo = new fluxeo( this_fitness );
     t.type( population, "Population", "is Population" );
- 
     population.initialize( population_size, random_chromosome_32);
-    running_population = population.chromosomes();
-    t.equal( running_population.length, population_size, "has been created" );
+    eo.evaluate( population, function( population ) {
+	var this_population = population.chromosomes();
+	t.equal( this_population.length, population_size, "has been created" );
+	t.equal( this_population[0] in population.fitness_of, true, "Evaluated");
+	t.end();
+    });
 
-    t.end();
+
 });
 
 console.log( running_population);
