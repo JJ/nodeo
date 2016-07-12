@@ -35,8 +35,19 @@ console.log( running_population);
 
 test("Evaluation", function(t) {
     var population = new Population( running_population );
+
     t.type( population, "Population", "is Population" );
     t.equal( population.chromosomes().length, population_size, "has been created" );
+    var this_mmdp = new mmdp.MMDP();
+    var this_fitness = function( individual ) {
+	return this_mmdp.apply( individual );
+    };
+    population.evaluate( this_fitness );
+    var sorted_population = population.rank();
+    t.equal( population.fitness_of[sorted_population[0]]
+	     >= population.fitness_of[sorted_population[1]]
+	     , true
+	     , "Sorted" );
     
     t.end();
 });
