@@ -58,7 +58,7 @@ test("Evolution", function(t) {
 
 test("Replacement", function(t) {
     eo.renew( population, function( population ) {
-	t.equal( population.size, population_size, "Renewed population");
+	t.equal( population.size(), population_size, "Renewed population");
 	t.end();
     });
 
