@@ -42,8 +42,19 @@ test("Creation", function(t) {
 	t.end();
     });
 
+});
+
+
+test("Evolution", function(t) {
+    eo.reproduce( population, function( population, new_population ) {
+	var this_population = population.chromosomes();
+	t.equal( population.fitness_of[this_population[0]] 
+		 >= population.fitness_of[this_population[1]], true,  "Ranked" );
+	t.equal( new_population.length, population_size-1, "New population");
+	t.end();
+    });
 
 });
 
-console.log( running_population);
+
 
