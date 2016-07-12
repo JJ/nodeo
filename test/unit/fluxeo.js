@@ -22,13 +22,17 @@ test('loads', function (t) {
 var running_population;
 var chromosome_size = 32;
 var population_size = 32;
+var tournament_size = 2;
 var random_chromosome_32 = function() {
     return utils.random( chromosome_size );
 };
 
+
+var population = new Population();
+var eo = new fluxeo( this_fitness,
+		     new Tournament( tournament_size, population_size-1 ));
+
 test("Creation", function(t) {
-    var population = new Population();
-    var eo = new fluxeo( this_fitness );
     t.type( population, "Population", "is Population" );
     population.initialize( population_size, random_chromosome_32);
     eo.evaluate( population, function( population ) {
