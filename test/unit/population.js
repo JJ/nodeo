@@ -16,14 +16,14 @@ test('loads', function (t) {
 var running_population;
 var chromosome_size = 32;
 var population_size = 32;
+var random_chromosome_32 = function() {
+    return utils.random( chromosome_size );
+};
 
 test("Creation", function(t) {
     var population = new Population();
     t.type( population, "Population", "is Population" );
-
-    var random_chromosome_32 = function() {
-	return utils.random( chromosome_size );
-    };
+ 
     population.initialize( population_size, random_chromosome_32);
     running_population = population.chromosomes();
     t.equal( running_population.length, population_size, "has been created" );
@@ -56,6 +56,10 @@ test("Evolution", function(t) {
     var population = new Population( running_population );
     population.cull( population_size/2 );
     t.equal( population.chromosomes().length, population_size/2, "has been erased" );
+    var new_population = new Population;
+    new_population.initialize( population_size/2, random_chromosome_32);
+    population.insert( new_population.chromosomes() );
+    t.equal( population.chromosomes().length, population_size, "has been added" );
     t.end();
 })
 
