@@ -27,7 +27,8 @@ test("Creation", function(t) {
     population.initialize( population_size, random_chromosome_32);
     running_population = population.chromosomes();
     t.equal( running_population.length, population_size, "has been created" );
-
+    population.addAsLast( random_chromosome_32() );
+    t.equal( population.chromosomes().length, population_size, "Incorporation worked" );
     t.end();
 });
 
