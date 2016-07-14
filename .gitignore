@@ -3,3 +3,7 @@ node_modules
 _site
 _layouts
 *~
+
+.nyc_output/
+app/testing.json
+coverage/
