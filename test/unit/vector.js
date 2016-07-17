@@ -23,7 +23,7 @@ chromosome_size = 2;
 test('vectors', function (t) {
     for ( var i = 0; i < population_size; i ++ )  {
 	var chromosome = new vector.Vector ( vector.random( chromosome_size, -1, 2 ) );
-	console.log(chromosome);
+//	console.log(chromosome);
 	t.equal(chromosome.vector.length, chromosome_size, "Length OK" );
         chromosome.fitness =  1-chromosome.vector[0]*chromosome.vector[1];
 	t.ok( chromosome.fitness >= 0, "fitness" );

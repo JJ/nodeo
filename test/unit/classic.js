@@ -57,7 +57,7 @@ test('Nodeo', function(t) {
     var eo = new Classic( { population_size: population_size,
 			    chromosome_size: chromosome_size,
 			    fitness_func: nodeo.utils.max_ones } );
-    console.log(eo);
+//    console.log(eo);
     t.ok( eo, "Tipo");
     var chosen = eo.tournament_selection( tournament_size, pool_size);
     t.equal( chosen.length, pool_size, "Size OK");

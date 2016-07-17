@@ -35,10 +35,10 @@ var random_chromosome_32 = function() {
 };
 
 var best_fitness = b*chromosome_size/l;
-console.log( "Best " + best_fitness );
+// console.log( "Best " + best_fitness );
 var solution_found = function ( population ) {
     if ( population.fitness( population.best() ) >= best_fitness ) {
-	console.log( "It's true" );
+//	console.log( "It's true" );
 	return true;
     } else {
 	return false;

@@ -55,7 +55,7 @@ test("MMDP", function(t) {
 function test_trap(t, params, subjects ) {
     var number_of_bits = params[0], 
     a = params[1], b = params[2], z  = params[3];
-    console.log( params );
+//    console.log( params );
     var many_traps = '';
     var sum = 0;
     for ( var i in subjects ) {

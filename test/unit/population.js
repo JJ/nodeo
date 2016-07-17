@@ -32,7 +32,7 @@ test("Creation", function(t) {
     t.end();
 });
 
-console.log( running_population);
+// console.log( running_population);
 
 test("Evaluation", function(t) {
     var population = new Population( running_population );

@@ -14,7 +14,7 @@ population = new Array([]),
 chromosome_size = 16;
 
 
-test('chromosomes floats', function (t) {
+test('Number vector chromosomes', function (t) {
     var tmpChr=[];
     for( var i=0; i<chromosome_size; ++i ) tmpChr[i]=Math.random();
     for ( var i = 0; i < population_size; i ++ )  {
@@ -35,8 +35,10 @@ test('chromosomes floats', function (t) {
 	if ( nodeo.utils.sum_ones( new_chromosome.vector )<chromosome_size/2 ) {
         // Testing invert
 	    var to_cross = CF.invert( chromosome );
-	    t.ok( to_cross.vector.reduce(function(prev,e,i){return prev && e==to_cross.vector[i];},true) !== chromosome.vector.reduce(function(prev,e,i){return prev && e==to_cross.vector[i];},true)
-            , "invert " + to_cross.vector.toString() + " - " + chromosome.vector.toString() );
+	    t.ok( to_cross.vector.reduce(function(prev,e,i){
+		return prev && e !== chromosome.vector[i];
+	    },true)
+		  , "invert " + to_cross.vector.toString() + " - " + chromosome.vector.toString() );
 
         // Testing crossover
 	    var crossed = CF.crossover( to_cross, chromosome );
@@ -59,7 +61,7 @@ test('Nodeo', function(t) {
     var eo = new Classic( { population_size: population_size,
 			    chromosome_size: chromosome_size,
 			    fitness_func: nodeo.utils.sum_ones} );
-    console.log("EO is ", eo);
+//    console.log("EO is ", eo);
     t.ok( eo, "Tipo");
     var dummy = new CF.Chromosome();
     var chosen = eo.tournament_selection( tournament_size, pool_size);
