@@ -9,6 +9,8 @@ layout: index
 
 [![codecov](https://codecov.io/gh/JJ/nodeo/branch/master/graph/badge.svg)](https://codecov.io/gh/JJ/nodeo)
 
+[![dependencies Status](https://david-dm.org/JJ/nodeo/status.svg)](https://david-dm.org/JJ/nodeo)
+
 ## Evolutionary Algorithm, simplified, for node
 
 NodEO includes the functions necessary to create a simple evolutionary algorithm in JavaScript in CommonJS format, for
