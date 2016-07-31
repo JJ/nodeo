@@ -19,7 +19,7 @@
 	"grunt-browserify": ">4.0",
 	"grunt-contrib-jshint": ">=1.0",
 	"grunt-docco": "~0.3.3",
-	"hint-hint": "~0.3.0",
+	"hint-hint": "~0.4.0",
 	"mocha-lcov-reporter": "0.0.1",
 	"tap": ">1.0",
 	"underscore": "^1.7.0"
