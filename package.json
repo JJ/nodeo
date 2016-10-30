@@ -3,7 +3,7 @@
     "name": "nodeo",
     "description": "Evolutionary Algorithm, simplified, for node",
     "license": "GPL-3.0",
-    "version": "0.3.2", 
+    "version": "0.3.3", 
     "repository": {
 	"url": "git://github.com/JJ/nodeo.git"
     },
