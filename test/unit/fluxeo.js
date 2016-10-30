@@ -76,14 +76,13 @@ test("Evolution", function(t) {
 });
 
 test("Replacement", function(t) {
-    var old_best = population.best();
-    eo.generation( population, function( population ) {
-	t.equal( population.size(), population_size, "Renewed population");
-	t.equal( population.fitness( old_best ) <=
-		 population.fitness( population.best() ), true,
-		 "Improving population" );
-	t.end();
-    });
+  var old_best = population.best();
+  eo.generation( population );
+  t.equal( population.size(), population_size, "Renewed population");
+  t.equal( population.fitness( old_best ) <=
+	   population.fitness( population.best() ), true,
+	   "Improving population" );
+  t.end();
 
 });
 
