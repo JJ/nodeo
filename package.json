@@ -1,31 +1,31 @@
 {
-    "author": "J. J. Merelo <jjmerelo@gmail.com> (http://github.com/JJ/nodeo)",
-    "name": "nodeo",
-    "description": "Evolutionary Algorithm, simplified, for node",
-    "license": "GPL-3.0",
-    "version": "0.3.3", 
-    "repository": {
-	"url": "git://github.com/JJ/nodeo.git"
-    },
-    "main": "./lib/nodeo.js",
-    "scripts": {
-	"test": "tap test/governance/*.js test/unit/*.js --coverage",
-	"posttest": "tap --coverage-report=lcov | codecov"
-    },
-    "devDependencies": {
-	"codecov": "^1.0.1",
-	"coveralls": "~2.11.2",
-	"docco": "~0.6.3",
-	"grunt-browserify": ">4.0",
-	"grunt-contrib-jshint": ">=1.0",
-	"grunt-docco": "~0.3.3",
-	"hint-hint": "~0.4.0",
-	"mocha-lcov-reporter": "0.0.1",
-	"tap": ">1.0",
-	"underscore": "^1.7.0"
-    },
-    "optionalDependencies": {},
-    "engines": {
-	"node": ">=0.10"
-    }
+   "author": "J. J. Merelo <jjmerelo@gmail.com> (http://github.com/JJ/nodeo)",
+   "name": "nodeo",
+   "description": "Evolutionary Algorithm, simplified, for node",
+   "license": "GPL-3.0",
+   "version": "0.3.3",
+   "repository": {
+      "url": "git://github.com/JJ/nodeo.git"
+   },
+   "main": "./lib/nodeo.js",
+   "scripts": {
+      "test": "tap test/governance/*.js test/unit/*.js --coverage",
+      "posttest": "tap --coverage-report=lcov | codecov"
+   },
+   "devDependencies": {
+      "codecov": "^1.0.1",
+      "coveralls": "~2.11.2",
+      "docco": "~0.6.3",
+      "grunt-browserify": ">4.0",
+      "grunt-contrib-jshint": ">=1.0",
+      "grunt-docco": "~0.3.3",
+      "hint-hint": "~0.4.0",
+      "mocha-lcov-reporter": "0.0.1",
+      "tap": ">1.0",
+      "underscore": "^1.7.0"
+   },
+   "optionalDependencies": {},
+   "engines": {
+      "node": ">=0.10"
+   }
 }
