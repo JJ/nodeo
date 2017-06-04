@@ -3,3 +3,4 @@ node_modules
 docs/
 coverage/
 _site/
+.nyc_output/
