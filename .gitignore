@@ -4,3 +4,4 @@ docs/
 coverage/
 _site/
 .nyc_output/
+testing.json
