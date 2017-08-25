@@ -15,10 +15,11 @@
    "devDependencies": {
       "codecov": "^1.0.1",
       "coveralls": "~2.11.2",
-      "docco": "~0.6.3",
+      "docco": ">=0.6.3",
       "grunt-browserify": ">4.0",
+      "grunt": "^1.0.0",
       "grunt-contrib-jshint": ">=1.0",
-      "grunt-docco": "~0.3.3",
+      "grunt-docco": "^0.5.0",
       "hint-hint": "~0.4.0",
       "mocha-lcov-reporter": "0.0.1",
       "tap": ">1.0"
