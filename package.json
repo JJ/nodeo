@@ -13,7 +13,7 @@
       "posttest": "tap --coverage-report=lcov | codecov"
    },
    "devDependencies": {
-      "codecov": "^1.0.1",
+      "codecov": "^3.7.1",
       "coveralls": "~2.11.2",
       "docco": ">=0.6.3",
       "grunt-browserify": ">4.0",
