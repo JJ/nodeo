@@ -14,8 +14,6 @@
    },
    "devDependencies": {
       "codecov": "^3.7.1",
-      "coveralls": "^3.1.1",
-      "hint-hint": "~0.4.0",
       "mocha-lcov-reporter": "0.0.1",
       "tap": "^16.3.3"
    },
