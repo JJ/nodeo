@@ -1,4 +1,4 @@
-name: Lint and test JavaScript code and run Android unit tests
+name: Test code and coverage
 on:
   push:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    name: Run tests.
+    name: Run tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
