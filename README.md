@@ -1,4 +1,4 @@
-# NodEO
+# NodEO [![nodeo](https://snyk.io/advisor/npm-package/nodeo/badge.svg)](https://snyk.io/advisor/npm-package/nodeo)
 
 [![NPM](https://nodei.co/npm/nodeo.png)](https://npmjs.org/package/nodeo)
 [![NPM](https://nodei.co/npm-dl/nodeo.png)](https://nodei.co/npm/nodeo/)
@@ -34,6 +34,10 @@ You can also clone it from this repo:
 ```bash
 git clone git@github.com:JJ/nodeo.git
 ```
+
+If you want to generate documentation from the source, you will have to install
+it independently via `npm i -g docco`. It's been eliminated from the source due
+to its state of maintenance, which is poor.
 
 ### Testing
 
