@@ -1,0 +1,31 @@
+name: Lint and test JavaScript code and run Android unit tests
+on:
+  push:
+  pull_request:
+    types: [opened]
+
+jobs:
+  test:
+    name: Run tests.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      - name: Cache JS deps
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: |
+            node_modules
+            **/node_modules
+            ~/.cache
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json', 'build/packages.json') }}-${{ hashFiles('package-lock.json', 'build/packages.json') }}
+      - name: Install JS packages
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Test
+        run: npm test
