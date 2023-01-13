@@ -19,11 +19,13 @@ they have been implemented in JavaScript.
 
 ## Build Status
 
-[![Build Status](https://travis-ci.org/JJ/nodeo.png)](https://travis-ci.org/JJ/nodeo)
+> We're right now in an extensive refactoring phase.
+
+[![Test code and coverage](https://github.com/JJ/nodeo/actions/workflows/test.yaml/badge.svg)](https://github.com/JJ/nodeo/actions/workflows/test.yaml)
 
 ## How to start
 
-Hints on installing and running it.
+Hints/instructions on installing and running it.
 
 ### Installation
 
