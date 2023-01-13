@@ -102,5 +102,3 @@ is a browserified version of this evolutionary algorithm.
 Please use [GitHub issues](https://github.com/JJ/nodeo/issues) and
 I'll try to help you. Can't guarantee I'll be in Gitter, but if that's
 your thing, please go ahead and try it, I'll arrive eventually.
-
-[![Join the chat at `https://gitter.im/JJ/nodeo` (nobody ever does, but who knows)](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JJ/nodeo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
