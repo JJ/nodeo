@@ -10,17 +10,11 @@ class Foo {
 }
 
 test("Exception works as expected", function (t) {
-  [Foo, Selection].map((aClass) => {
+  [Foo, Selection, Fitness].map((aClass) => {
     t.throws(function () {
       new aClass();
     }, ABTException);
   });
 
-  t.throws(function () {
-    new Selection();
-  }, ABTException);
-  t.throws(function () {
-    new Fitness();
-  }, ABTException);
   t.end();
 });
