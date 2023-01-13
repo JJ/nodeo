@@ -1,7 +1,6 @@
 # NodEO [![nodeo](https://snyk.io/advisor/npm-package/nodeo/badge.svg)](https://snyk.io/advisor/npm-package/nodeo)
 
 [![NPM](https://nodei.co/npm/nodeo.png)](https://npmjs.org/package/nodeo)
-[![NPM](https://nodei.co/npm-dl/nodeo.png)](https://nodei.co/npm/nodeo/)
 
 [![codecov](https://codecov.io/gh/JJ/nodeo/branch/master/graph/badge.svg)](https://codecov.io/gh/JJ/nodeo)
 
