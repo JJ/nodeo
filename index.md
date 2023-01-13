@@ -9,8 +9,6 @@ layout: index
 
 [![codecov](https://codecov.io/gh/JJ/nodeo/branch/master/graph/badge.svg)](https://codecov.io/gh/JJ/nodeo)
 
-[![dependencies Status](https://david-dm.org/JJ/nodeo/status.svg)](https://david-dm.org/JJ/nodeo)
-
 ## Evolutionary Algorithm, simplified, for node
 
 NodEO includes the functions necessary to create a simple evolutionary algorithm in JavaScript in CommonJS format, for
@@ -35,6 +33,7 @@ npm install nodeo
 ```
 
 You can also clone it from this repo:
+
 ```bash
 git clone git@github.com:JJ/nodeo.git
 ```
@@ -48,26 +47,24 @@ to its state of maintenance, which is poor.
 If you have downloaded it from `npm`, it's already tested. If you have cloned it,
 
 ```bash
-npm install 
+npm install
 npm test
 ```
-
 
 ### Running an evolutionary algorithm
 
 There's a simple evolutionary algorithm in the `app` directory of this
 repository. Run
 
-	node app/ea.js
+    node app/ea.js
 
 or
 
-	node app/classic-ea.js
+    node app/classic-ea.js
 
 from the command line, for the version with a bit more complicated
 data structures and no cached fitness function (lighter on the memory
-front). 
-
+front).
 
 ## How to go further
 
@@ -85,18 +82,18 @@ npm install -g grunt-cli
 
 And then
 
-	grunt docco
+    grunt docco
 
 to generate documentation (if you've installed docco previously) or
 
-	grunt jshint
+    grunt jshint
 
 to check the code or
 
-	grunt browsify
+    grunt browsify
 
 to generate a browser-ready evolutionary algorithm based on the
-`classic` version. 
+`classic` version.
 
 ## Do you want to help in an evolutionary computing experiment?
 
@@ -107,9 +104,6 @@ is a browserified version of this evolutionary algorithm.
 
 Please use [GitHub issues](https://github.com/JJ/nodeo/issues) and
 I'll try to help you. Can't guarantee I'll be in Gitter, but if that's
-your thing, please go ahead and try it, I'll arrive eventually. 
+your thing, please go ahead and try it, I'll arrive eventually.
 
 [![Join the chat at `https://gitter.im/JJ/nodeo` (nobody ever does, but who knows)](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JJ/nodeo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-
-
