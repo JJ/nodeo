@@ -10,7 +10,7 @@
    "main": "./lib/nodeo.js",
    "scripts": {
       "test": "tap test/unit/*test.js --coverage",
-      "coverage": "tap --coverage-report=lcov| codecov"
+      "coverage": "tap --coverage-report=lcov"
    },
    "devDependencies": {
       "codecov": "^3.7.1",
