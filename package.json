@@ -9,7 +9,7 @@
    },
    "main": "./lib/nodeo.js",
    "scripts": {
-      "test": "tap test/unit/*test.js --coverage",
+      "test": "tap test/unit/*.test.js",
       "coverage": "tap --coverage-report=lcov"
    },
    "devDependencies": {
