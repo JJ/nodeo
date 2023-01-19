@@ -100,5 +100,4 @@ is a browserified version of this evolutionary algorithm.
 ## Problems? Questions?
 
 Please use [GitHub issues](https://github.com/JJ/nodeo/issues) and
-I'll try to help you. Can't guarantee I'll be in Gitter, but if that's
-your thing, please go ahead and try it, I'll arrive eventually.
+I'll try to help you.
