@@ -1,15 +1,19 @@
 import { test } from "tap";
-import { AckleyFitness, RastriginFitness } from "../../lib/fitness/index.js";
-
-const ackley = new AckleyFitness();
+import {
+  AckleyFitness,
+  RastriginFitness,
+  MMDPFitness,
+} from "../../lib/fitness/index.js";
 
 test("Ackley", function (t) {
-  var subjects = [
+  const ackley = new AckleyFitness();
+
+  let subjects = [
     [0, 0],
     [0, 0, 0],
   ];
 
-  for (var i in subjects) {
+  for (let i in subjects) {
     t.equal(ackley.apply(subjects[i]), 0, "Ackley " + i + " = " + subjects[i]);
     t.equal(
       ackley.apply(subjects[i]),
@@ -21,7 +25,7 @@ test("Ackley", function (t) {
     [0, 0.5],
     [0, 0, 0.1],
   ];
-  for (i in subjects) {
+  for (let i in subjects) {
     t.equal(
       ackley.apply(subjects[i]),
       ackley.apply(subjects[i]),
@@ -32,13 +36,13 @@ test("Ackley", function (t) {
 });
 
 test("Rastrigin", function (t) {
-  var subjects = [
+  let subjects = [
     [0, 0],
     [0, 0, 0],
   ];
   var rastrigin = new RastriginFitness();
 
-  for (var i in subjects) {
+  for (let i in subjects) {
     t.equal(
       rastrigin.apply(subjects[i]),
       0,
@@ -54,12 +58,33 @@ test("Rastrigin", function (t) {
     [0, 0.5],
     [0, 0, 0.1],
   ];
-  for (i in subjects) {
+  for (let i in subjects) {
     t.equal(
       rastrigin.apply(subjects[i]),
       rastrigin.apply(subjects[i]),
       "Rastrigin " + i + " = " + subjects[i] + "Works consistently"
     );
   }
+  t.end();
+});
+
+test("MMDP", function (t) {
+  const this_mmdp = new MMDPFitness();
+  let sum = 0;
+  const subjects = {
+    111111: 1,
+    "000000111111": 2,
+    "000001": 0,
+    100001: 0.360384,
+    101001: 0.640576,
+  };
+  let many_mmdp = "";
+  for (let i in subjects) {
+    many_mmdp += i;
+    sum += subjects[i];
+    t.equal(this_mmdp.apply(i), subjects[i], "mmdp " + i + " = " + subjects[i]);
+  }
+  t.equal(this_mmdp.apply(many_mmdp), sum, "Many MMDP");
+
   t.end();
 });
