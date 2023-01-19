@@ -5,6 +5,7 @@ import {
   RastriginFitness,
   MMDPFitness,
 } from "../../lib/fitness/index.js";
+import { HIFFFitness } from "../../lib/fitness/HIFF.js";
 
 test("Ackley", function (t) {
   const ackley = new AckleyFitness();
@@ -122,3 +123,29 @@ function test_trap(t, params, subjects) {
 
   t.equal(local_trap.apply(many_traps), sum, "Many l-traps");
 }
+
+test("HIFF", function (t) {
+  const this_HIFF = new HIFFFitness();
+  let many_HIFF = "";
+  let sum = 0;
+  let subjects = {
+    10: 2,
+    1100: 8,
+    1011: 6,
+    10101101100100: 16,
+    1010110110010011: 22,
+    "010101101100100": 19,
+    "00000000100000": 42,
+    1111111110000110: 42,
+    "0010110100101101": 24,
+  };
+  console.log(this_HIFF);
+  for (let i in subjects) {
+    many_HIFF += i;
+    sum += subjects[i];
+    t.equal(this_HIFF.apply(i), subjects[i], "HIFF " + i + " = " + subjects[i]);
+  }
+  t.equal(this_HIFF.apply(many_HIFF), 163, "Many HIFF");
+
+  t.end();
+});
