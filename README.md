@@ -65,37 +65,8 @@ front).
 
 ## How to go further
 
-You can try and add your own stuff to the library. Start here
+You can try and add your own stuff to the library. **Work in progress**
 
-### Contributing.
-
-You will have to install a bit of more stuff, including Grunt, which,
-for the time being, is used to check code and generate
-documentation. That is
-
-```bash
-npm install -g grunt-cli
-```
-
-And then
-
-    grunt docco
-
-to generate documentation (if you've installed docco previously) or
-
-    grunt jshint
-
-to check the code or
-
-    grunt browsify
-
-to generate a browser-ready evolutionary algorithm based on the
-`classic` version.
-
-## Do you want to help in an evolutionary computing experiment?
-
-It's sometimes [running here](http://nodio-jmerelo.rhcloud.com/). It
-is a browserified version of this evolutionary algorithm.
 
 ## Problems? Questions?
 
