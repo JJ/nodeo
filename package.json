@@ -9,10 +9,10 @@
    },
    "main": "./lib/nodeo.js",
    "scripts": {
-      "test": "tap test/unit/*.test.js",
-      "coverage": "tap --coverage-report=lcov"
+      "test": "c8 tap --no-coverage test/unit/*.test.js"
    },
    "devDependencies": {
+      "c8": "^7.12.0",
       "codecov": "^3.7.1",
       "mocha-lcov-reporter": "0.0.1",
       "tap": "^16.3.3"
