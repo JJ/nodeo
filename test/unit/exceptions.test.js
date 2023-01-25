@@ -1,6 +1,8 @@
 import { ABTException } from "../../lib/abt_exception.js";
 import { Selection } from "../../lib/api/selection.js";
 import { Fitness } from "../../lib/api/fitness.js";
+import { Chromosome } from "../../lib/api/chromosome.js";
+
 import { test } from "tap";
 
 class Foo {
@@ -9,8 +11,8 @@ class Foo {
   }
 }
 
-test("Exception works as expected", function (t) {
-  [Foo, Selection, Fitness].map((aClass) => {
+test("Exceptions works as expected", function (t) {
+  [Foo, Selection, Fitness, Chromosome].map((aClass) => {
     t.throws(function () {
       new aClass();
     }, ABTException);

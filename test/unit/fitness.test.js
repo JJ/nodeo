@@ -139,7 +139,6 @@ test("HIFF", function (t) {
     1111111110000110: 42,
     "0010110100101101": 24,
   };
-  console.log(this_HIFF);
   for (let i in subjects) {
     many_HIFF += i;
     sum += subjects[i];
