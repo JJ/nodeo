@@ -1,5 +1,4 @@
 import { test } from "tap";
-import { HIFFFitness } from "../../lib/fitness/HIFF.js";
 import { StringChromosome } from "../../lib/chromosomes/string_chromosome.js";
 
 const NUMBER_OF_CHROMOSOMES = 32;

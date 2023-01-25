@@ -14,6 +14,6 @@ test("Generating chromosomes", (t) => {
     thisFitness,
     StringChromosome
   );
-  population.population.foreach((e) => t.ok(e.fitness, "Fitness computed "));
+  population.population.forEach((e) => t.ok(e.fitness, "Fitness computed "));
   t.end();
 });
