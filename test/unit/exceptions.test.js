@@ -11,7 +11,7 @@ class Foo {
   }
 }
 
-test("Exceptions works as expected", function (t) {
+test("Exceptions work as expected", function (t) {
   [Foo, Selection, Fitness, Chromosome].map((aClass) => {
     t.throws(function () {
       new aClass();
