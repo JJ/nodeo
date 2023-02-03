@@ -23,19 +23,21 @@ test("Generating float chromosome", (t) => {
   const DIMENSION = 10;
   const MIN = 0.0;
   const MAX = 1.0;
-  const floatChromosome = FloatChromosome.factory(NUMBER_OF_CHROMOSOMES, {
+  const floatChromosomes = FloatChromosome.factory(NUMBER_OF_CHROMOSOMES, {
     length: DIMENSION,
     max: MAX,
     min: MIN,
   });
   t.equal(
-    floatChromosome.length,
+    floatChromosomes.length,
     NUMBER_OF_CHROMOSOMES,
     "Generated as many chromosomes as requested"
   );
-  t.equal(floatChromosome[0].length, DIMENSION);
-  console.log(floatChromosome);
-  t.ok(floatChromosome[0].vectorChr[0] > MIN, "Within bounds");
-  t.ok(floatChromosome[0].vectorChr[0] < MAX, "Within bounds");
+  floatChromosomes.forEach((fc) => {
+    t.equal(fc.length, DIMENSION);
+    t.ok(fc[0] > MIN, "Within bounds - left");
+    t.ok(fc[0] < MAX, "Within bounds - right");
+  });
+
   t.end();
 });
