@@ -1,4 +1,6 @@
-# NodEO [![nodeo](https://snyk.io/advisor/npm-package/nodeo/badge.svg)](https://snyk.io/advisor/npm-package/nodeo)
+# NodEO
+  [![nodeo](https://snyk.io/advisor/npm-package/nodeo/badge.svg)](https://snyk.io/advisor/npm-package/nodeo) [![Test code and coverage](https://github.com/JJ/nodeo/actions/workflows/test.yaml/badge.svg)](https://github.com/JJ/nodeo/actions/workflows/test.yaml)
+
 
 [![NPM](https://nodei.co/npm/nodeo.png)](https://npmjs.org/package/nodeo)
 
@@ -13,11 +15,7 @@ node.js and anything else that uses that format. Can be (and indeed has been) co
 in case you want to know more about evolutionary algorithms and how
 they have been implemented in JavaScript.
 
-## Build Status
-
 > We're right now in an extensive refactoring phase.
-
-[![Test code and coverage](https://github.com/JJ/nodeo/actions/workflows/test.yaml/badge.svg)](https://github.com/JJ/nodeo/actions/workflows/test.yaml)
 
 ## How to start
 
