@@ -33,6 +33,8 @@ You can also clone it from this repo:
 git clone git@github.com:JJ/nodeo.git
 ```
 
+which of course will get you the latest version, probably not in npm yet.
+
 If you want to generate documentation from the source, you will have to install
 it independently via `npm i -g docco`. It's been eliminated from the source due
 to its state of maintenance, which is poor.
