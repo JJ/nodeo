@@ -10,7 +10,7 @@
    "main": "./lib/nodeo.js",
    "scripts": {
        "test": "c8 --reporter=html tap --no-coverage test/unit/*.test.js",
-       "lint": "eslint lib/api/*.js lib/chromosomes/*.js lib/fitness/*.js"
+       "lint": "eslint lib/api/*.js lib/chromosomes/*.js lib/fitness/*.js test/unit/*.test.js"
    },
    "devDependencies": {
       "c8": "^7.12.0",

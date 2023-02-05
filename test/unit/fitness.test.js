@@ -127,7 +127,6 @@ function test_trap(t, params, subjects) {
 test("HIFF", function (t) {
   const this_HIFF = new HIFFFitness();
   let many_HIFF = "";
-  let sum = 0;
   let subjects = {
     10: 2,
     1100: 8,
@@ -141,7 +140,6 @@ test("HIFF", function (t) {
   };
   for (let i in subjects) {
     many_HIFF += i;
-    sum += subjects[i];
     t.equal(this_HIFF.apply(i), subjects[i], "HIFF " + i + " = " + subjects[i]);
   }
   t.equal(this_HIFF.apply(many_HIFF), 163, "Many HIFF");
