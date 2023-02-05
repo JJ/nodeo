@@ -30,5 +30,7 @@ jobs:
       - name: Install JS packages
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
+      - name: Lint
+        run: npm lint
       - name: Test
         run: npm test
