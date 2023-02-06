@@ -37,6 +37,9 @@ test("Generating float chromosome", (t) => {
     t.equal(fc.length, DIMENSION);
     t.ok(fc[0] > MIN, "Within bounds - left");
     t.ok(fc[0] < MAX, "Within bounds - right");
+    const aChromosome = new FloatChromosome(fc);
+    const newChromosome = FloatChromosome.mutate(aChromosome);
+    t.notSame(newChromosome, fc.vectorChr, "Mutation works");
   });
 
   t.end();
