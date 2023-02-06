@@ -19,6 +19,13 @@ test("Generating string chromosomes", (t) => {
   t.end();
 });
 
+test("Fitness needs to be defined ", (t) => {
+  t.throws(() => {
+    new FloatChromosome([1], null);
+  }, "Throws with null fitness");
+  t.end();
+});
+
 test("Generating float chromosome", (t) => {
   const DIMENSION = 10;
   const MIN = 0.0;
