@@ -1,6 +1,7 @@
 import { test } from "tap";
 import { StringChromosome } from "../../lib/chromosomes/string_chromosome.js";
 import { FloatChromosome } from "../../lib/chromosomes/float_chromosome.js";
+import { VectorChromosome } from "../../lib/chromosomes/any_chromosome.js";
 
 const NUMBER_OF_CHROMOSOMES = 32;
 
@@ -49,5 +50,15 @@ test("Generating float chromosome", (t) => {
     t.notSame(newChromosome, fc.vectorChr, "Mutation works");
   });
 
+  t.end();
+});
+
+class DummyChromosome extends VectorChromosome {}
+const dummies = [
+  new DummyChromosome("aaaaaaaaa".split("")),
+  new DummyChromosome("bbbbbbbbb".split("")),
+];
+test("Checking vector-arranged chromosomes", (t) => {
+  t.equal(dummies[0].vector.length, dummies[1].vector.length);
   t.end();
 });
