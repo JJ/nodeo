@@ -54,10 +54,10 @@ test("Generating float chromosome", (t) => {
 });
 
 class DummyChromosome extends VectorChromosome {}
-const dummies = [
-  new DummyChromosome("aaaaaaaaa".split("")),
-  new DummyChromosome("bbbbbbbbb".split("")),
-];
+const aLength = 10;
+const dummyArrays = ["a", "b"].map((l) => l.repeat(aLength).split(""));
+const dummies = dummyArrays.map((a) => new DummyChromosome(a));
+console.log(dummies);
 test("Checking vector-arranged chromosomes", (t) => {
   t.equal(dummies[0].vector.length, dummies[1].vector.length);
   const [result_1, result_2] = VectorChromosome.crossover(
