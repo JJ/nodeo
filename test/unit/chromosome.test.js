@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { test } from "tap";
 import { StringChromosome } from "../../lib/chromosomes/string_chromosome.js";
 import { FloatChromosome } from "../../lib/chromosomes/float_chromosome.js";
@@ -57,6 +58,8 @@ class DummyChromosome extends VectorChromosome {}
 const aLength = 10;
 const dummyArrays = ["a", "b"].map((l) => l.repeat(aLength).split(""));
 const dummies = dummyArrays.map((a) => new DummyChromosome(a));
+const dummySets = dummyArrays.map((a) => _.countBy(a));
+console.log(dummySets);
 test("Checking vector-arranged chromosomes", (t) => {
   t.equal(dummies[0].vector.length, dummies[1].vector.length);
   const [result_1, result_2] = VectorChromosome.crossover(
@@ -66,5 +69,6 @@ test("Checking vector-arranged chromosomes", (t) => {
   t.equal(result_1.length, result_2.length);
   t.equal(result_1.length, dummies[0].vector.length);
   t.equal(result_2.length, dummies[1].vector.length);
+
   t.end();
 });
