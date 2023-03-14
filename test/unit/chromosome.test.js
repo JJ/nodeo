@@ -60,5 +60,11 @@ const dummies = [
 ];
 test("Checking vector-arranged chromosomes", (t) => {
   t.equal(dummies[0].vector.length, dummies[1].vector.length);
+  const [result_1, result_2] = VectorChromosome.crossover(
+    dummies[0],
+    dummies[1]
+  );
+  console.warn(result_1, result_2);
+  t.equal(result_1.vector.length, result_2.vector.length);
   t.end();
 });
