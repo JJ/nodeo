@@ -58,7 +58,7 @@ class DummyChromosome extends VectorChromosome {}
 const aLength = 10;
 const dummyArrays = ["a", "b"].map((l) => l.repeat(aLength).split(""));
 const dummies = dummyArrays.map((a) => new DummyChromosome(a));
-const dummySets = dummyArrays.map((a) => _.countBy(a));
+const dummySets = hashUnion(dummyArrays[0], dummyArrays[1]);
 console.log(dummySets);
 test("Checking vector-arranged chromosomes", (t) => {
   t.equal(dummies[0].vector.length, dummies[1].vector.length);
@@ -69,6 +69,22 @@ test("Checking vector-arranged chromosomes", (t) => {
   t.equal(result_1.length, result_2.length);
   t.equal(result_1.length, dummies[0].vector.length);
   t.equal(result_2.length, dummies[1].vector.length);
-
+  const resultSet = hashUnion(result_1, result_2);
+  t.same(resultSet, dummySets);
   t.end();
 });
+
+function hashUnion(array1, array2) {
+  const resultsSet1 = _.countBy(array1);
+  const resultsSet2 = _.countBy(array2);
+  const keys = new Set([..._.keys(resultsSet1), ..._.keys(resultsSet2)]);
+  let resultsSet = {};
+  for (let i of keys) {
+    resultsSet[i] = valueOrZero(resultsSet1, i) + valueOrZero(resultsSet2, i);
+  }
+  return resultsSet;
+}
+
+function valueOrZero(hash, key) {
+  return key in hash ? hash[key] : 0;
+}
