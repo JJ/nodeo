@@ -7,3 +7,5 @@ _layouts
 .nyc_output/
 app/testing.json
 coverage/
+
+.DS_Store
