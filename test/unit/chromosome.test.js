@@ -1,6 +1,5 @@
 import _ from "lodash";
 import { test } from "tap";
-import { StringChromosome } from "../../lib/chromosomes/string_chromosome.js";
 import { FloatChromosome } from "../../lib/chromosomes/float_chromosome.js";
 import { VectorChromosome } from "../../lib/chromosomes/vector_chromosome.js";
 
