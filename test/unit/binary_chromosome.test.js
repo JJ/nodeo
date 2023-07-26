@@ -14,7 +14,11 @@ test("Generating binary string chromosomes", (t) => {
       NUMBER_OF_CHROMOSOMES,
       "Generated as many chromosomes as requested"
     );
-    t.equal(manyChromosomes[0].length, l);
+    manyChromosomes.forEach((c) => {
+      t.equal(c.length, l);
+      const fakeChrom = { stringChr: c };
+      t.notSame(c, StringChromosome.mutate(fakeChrom));
+    });
   });
   t.end();
 });
