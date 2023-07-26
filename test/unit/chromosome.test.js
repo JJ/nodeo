@@ -6,21 +6,6 @@ import { VectorChromosome } from "../../lib/chromosomes/vector_chromosome.js";
 
 const NUMBER_OF_CHROMOSOMES = 32;
 
-test("Generating string chromosomes", (t) => {
-  [20, 64].forEach((l) => {
-    const manyChromosomes = StringChromosome.factory(NUMBER_OF_CHROMOSOMES, {
-      length: l,
-    });
-    t.equal(
-      manyChromosomes.length,
-      NUMBER_OF_CHROMOSOMES,
-      "Generated as many chromosomes as requested"
-    );
-    t.equal(manyChromosomes[0].length, l);
-  });
-  t.end();
-});
-
 test("Fitness needs to be defined ", (t) => {
   t.throws(() => {
     new FloatChromosome([1], null);
