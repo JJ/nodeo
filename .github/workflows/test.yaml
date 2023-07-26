@@ -1,4 +1,4 @@
-name: Test code and coverage
+name: Test code quality, code and coverage
 on:
   push:
   pull_request:
@@ -8,7 +8,7 @@ jobs:
   test:
     strategy:
       matrix:
-        node_version: [18, 19]
+        node_version: [18, 19, 20]
     name: Run tests
     runs-on: ubuntu-latest
     steps:
