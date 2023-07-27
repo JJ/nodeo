@@ -1,0 +1,18 @@
+name: Test with bun
+on:
+  push:
+    paths:
+      - "**/*.js"
+  pull_request:
+    paths:
+      - "**/*.js"
+jobs:
+  testingWithBun:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Working version
+        uses: antongolub/action-setup-bun@v1
+      - name: Check out source
+        uses: actions/checkout@v3
+      - name: test
+        run: bun test test/bun
