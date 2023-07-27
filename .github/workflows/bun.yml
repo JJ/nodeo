@@ -12,7 +12,11 @@ jobs:
     steps:
       - name: Working version
         uses: antongolub/action-setup-bun@v1
+        with:
+          cache: true
       - name: Check out source
         uses: actions/checkout@v3
+      - name: Install modules
+        run: bun install
       - name: test
         run: bun test test/bun
