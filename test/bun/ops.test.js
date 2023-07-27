@@ -3,7 +3,6 @@ import { expect, test } from "bun:test";
 import { StringChromosome } from "../../lib/chromosomes/string_chromosome.js";
 import { evaluation } from "../../lib/population_ops.js";
 import { LTrapFitness } from "../../lib/fitness/index.js";
-import { Chromosome } from "../../lib/api/chromosome.js";
 
 const NUMBER_OF_CHROMOSOMES = 32;
 const CHROMOSOME_LENGTH = 64;
