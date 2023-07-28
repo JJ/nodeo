@@ -27,10 +27,11 @@ test("Evaluation with l-trap", function () {
   });
 });
 
-test("tournament selection", function () {
+test("Tournament selection", function () {
   const newPopulation = selection.apply(manyChromosomes);
   expect(newPopulation.length).toBe(NUMBER_OF_CHROMOSOMES);
   newPopulation.forEach((c) => {
     expect(c).toHaveProperty("stringChr");
+    expect(c).toHaveProperty("fitness");
   });
 });
