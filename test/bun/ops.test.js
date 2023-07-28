@@ -1,7 +1,7 @@
 import { expect, test } from "bun:test";
 
 import { StringChromosome } from "../../lib/chromosomes/string_chromosome.js";
-import { Evaluation } from "../../lib/population_ops.js";
+import { Evaluation } from "../../lib/op/population_ops.js";
 import { LTrapFitness } from "../../lib/fitness/index.js";
 import { Tournament } from "../../lib/op/tournament.js";
 
