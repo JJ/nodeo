@@ -9,3 +9,5 @@ app/testing.json
 coverage/
 
 .DS_Store
+
+.tap/
