@@ -19,7 +19,7 @@ jobs:
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
       - name: Cache JS deps
-        uses: actions/cache@v6
+        uses: actions/cache@v5
         id: cache
         with:
           path: |
