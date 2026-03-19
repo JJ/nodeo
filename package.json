@@ -11,7 +11,7 @@
    "scripts": {
        "test-coverage": "c8 --reporter=html tap  test/unit/*.test.js -- --no-coverage" ,
        "lint": "eslint lib/api/*.js lib/chromosomes/*.js lib/fitness/*.js test/unit/*.test.js",
-       "test": "tap  test/unit/*.test.js -- --no-coverage"
+       "test": "tap  test/unit/*.test.js --disable-coverage"
    },
    "devDependencies": {
       "c8": "^7.12.0",
