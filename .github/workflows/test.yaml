@@ -8,18 +8,18 @@ jobs:
   test:
     strategy:
       matrix:
-        node_version: [18, 19, 20]
+        node_version: [lts/-1, lts, latest]
     name: Run tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node_version }}
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
       - name: Cache JS deps
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         id: cache
         with:
           path: |
