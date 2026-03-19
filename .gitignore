@@ -5,3 +5,5 @@ coverage/
 _site/
 .nyc_output/
 testing.json
+
+.tap/
