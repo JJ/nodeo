@@ -14,8 +14,8 @@
        "test": "tap  test/unit/*.test.js --disable-coverage"
    },
    "devDependencies": {
-      "c8": "^7.12.0",
-      "eslint": "^8.33.0",
+      "c8": "^12.0.0",
+      "eslint": "^10.7.0",
       "tap": "^21.1.0"
    },
    "type": "module",
